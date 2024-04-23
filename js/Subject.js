@@ -115,7 +115,7 @@ class Subject {
                                     <img class="subject_status_img ` + ((this.puede_cursar())? ' ': 'disabled') + `" src="./img/padlock_open.png" alt="padlock" />
                                 </div>
 
-                                <div class="subject_new hidden">Nuevo</div>
+                                <div class="subject_new hidden">Nuevo Desbloqueado</div>
                                 <div class="subject_requeriment hidden">Requisito Necesario</div>
 
                                 <div class="dropdown hidden" id="subject_dropdown_` + this._id + `_0">
@@ -180,22 +180,6 @@ class Subject {
                 subject.querySelector(".subject_id").classList.remove("subject_id_red_mark");
                 subject.querySelector(".subject_requeriment").classList.add("hidden");
 
-                if (subject_focus instanceof Subject) {
-                    if (!subject_focus.puede_cursar() && subject_focus._status < 1) {
-                        if ( subject_focus.es_requisito_faltante_para_cursar(this) ) {
-                            subject.classList.add("mark_02");
-                            subject.querySelector(".subject_requeriment").classList.remove("hidden");
-                            subject.querySelector(".subject_id").classList.add("subject_id_red_mark");
-                        }
-                    } else if (!subject_focus.puede_aprobar() && subject_focus._status == 1) {
-                        if ( subject_focus.es_requisito_faltante_para_aprobar(this) ) {
-                            subject.classList.add("mark_02");
-                            subject.querySelector(".subject_requeriment").classList.remove("hidden");
-                            subject.querySelector(".subject_id").classList.add("subject_id_red_mark");
-                        }
-                    }
-                }
-
                 if(this._status == 0) {
                     if(this.puede_cursar()) {
                         subject.classList.add("mark_01");
@@ -233,6 +217,24 @@ class Subject {
                         subject.classList.add("status_00");
                         subject.querySelector(".subject_status_img").classList.add("disabled");
                         subject.querySelector(".subject_new").classList.add("hidden");
+                    }
+                }
+  
+                if (subject_focus instanceof Subject) {
+                    if (!subject_focus.puede_cursar() && subject_focus._status < 1) {
+                        if ( subject_focus.es_requisito_faltante_para_cursar(this) ) {
+                            subject.classList.add("mark_02");
+                            subject.querySelector(".subject_new").classList.add("hidden");
+                            subject.querySelector(".subject_requeriment").classList.remove("hidden");
+                            subject.querySelector(".subject_id").classList.add("subject_id_red_mark");
+                        }
+                    } else if (!subject_focus.puede_aprobar() && subject_focus._status == 1) {
+                        if ( subject_focus.es_requisito_faltante_para_aprobar(this) ) {
+                            subject.classList.add("mark_02");
+                            subject.querySelector(".subject_new").classList.add("hidden");
+                            subject.querySelector(".subject_requeriment").classList.remove("hidden");
+                            subject.querySelector(".subject_id").classList.add("subject_id_red_mark");
+                        }
                     }
                 }
                 
