@@ -1,0 +1,367 @@
+/* General Styles */
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    min-height: 100vh; /* Usa la altura del viewport */
+    font-family: 'Dosis', sans-serif;
+}
+
+/* Estilo del scroll */
+/* Para navegadores WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Header */
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+
+h2 {
+    text-align: center;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+/* Main */
+
+main {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+.year_column {
+    border-left: dashed 2px rgb(37, 37, 37);
+}
+
+.year_sub_column {
+    display: flex;
+    flex-direction: row;
+}
+
+.cuatrimestre_column {
+    display: flex;
+    flex-direction: column;
+    border-right: none;
+}
+
+.cuatrimestre_year_column {
+    border-top: solid 2px grey;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.cuatrimestre_number_column {
+    border-top: solid 2px grey;
+    border-bottom: solid 2px grey;
+    font-size: 1rem;
+}
+
+.subject_column {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 4;
+    justify-content: center;
+    height: 400px;
+}
+
+.subject_container {
+    display: flex;
+    position: relative;
+    background-color: rgb(19, 19, 19);
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 20px 20px 20px 20px;
+    width: 260px;
+    height: 60px;
+    border-radius: 16px;
+    border: solid 1px white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.486);
+}
+
+.subject_container:hover {
+  cursor: pointer;
+}
+
+.subject_id {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 15px 0 0 15px;
+    flex-grow: 1;
+    align-items: stretch;
+    justify-content: center;
+    font-size: 20px;
+    max-width: 60px;
+}
+
+.subject_name {
+    font-size: 16px;
+    flex-grow: 2;
+    width: 50px;
+    margin: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.subject_status {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    border-radius: 15px;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    max-width: 55px;
+    min-width: 55px;
+}
+
+.subject_id_01 {
+    color: orange;
+}
+
+.subject_id_02 {
+    color: green;
+}
+
+.subject_id_red_mark {
+    color: crimson;
+}
+
+.subject_status_01 {
+    background-color: rgb(202, 132, 2);
+    font-weight: 800;
+    font-size: 40px;
+    color: black;
+
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(255 191 115);
+}
+
+.subject_status_02 {
+    background-color: rgb(1 81 5);
+    font-weight: 800;
+    font-size: 40px;
+    color: black;
+
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(169 255 129);
+}
+
+.subject_status_img {
+    width: 25px;
+}
+
+.disabled {
+    filter: brightness(40%);
+}
+
+.subject_new {
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    bottom: 110%;
+    margin-top: 5px;
+    padding: 5px 2px 5px 2px;
+    color: white;
+    min-width: 160px;
+    width: 100%;
+    letter-spacing: 4px;
+    z-index: 1;
+    animation: sub_new 0.8s infinite alternate;
+}
+
+@keyframes sub_new {
+    0% {
+        text-shadow: 0px 0px 10px white;
+    }
+    100% {
+        text-shadow: 0px 0px 5px white;
+    }
+}
+
+.subject_requeriment {
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    bottom: 110%;
+    margin-top: 5px;
+    padding: 5px 2px 5px 2px;
+    color: crimson;
+    min-width: 160px;
+    width: 100%;
+    z-index: 2;
+    animation: sub_req 0.8s infinite alternate;
+}
+
+@keyframes sub_req {
+    0% {
+        text-shadow: 0px 0px 10px red;
+    }
+    100% {
+        text-shadow: 0px 0px 5px red;
+    }
+}
+
+.dropdown {
+    display: inline;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    top: 100%;
+    margin-top: 5px;
+    padding: 5px 2px 5px 2px;
+    background-color: rgb(31, 31, 31);
+    color: white;
+    min-width: 160px;
+    width: 100%;
+    border-radius: 5px;
+    z-index: 2;
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.397);
+}
+
+.dropdown_2 {
+    display: inline;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    top: 201%;
+    margin-top: 5px;
+    padding: 5px 2px 5px 2px;
+    background-color: rgb(31, 31, 31);
+    color: white;
+    min-width: 160px;
+    width: 100%;
+    border-radius: 5px;
+    z-index: 2;
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.397);
+}
+
+button {
+    font-family: 'Dosis', 'sans-serif';
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Estilos de los estados de las Materias */
+
+.status_00 {
+    border: 1px solid transparent;
+    background-color: rgb(17, 17, 17);
+    color: rgb(82, 82, 82);
+    box-shadow: none;
+    /* animation: parpadeo 0.8s infinite alternate; */
+}
+
+.status_02 {
+    border: 1px solid rgb(211, 127, 9);
+    background-color: rgb(26, 15, 1);
+    color: white;
+    box-shadow: 0 0 3px 2px rgba(250, 167, 12, 0.2);
+}
+
+.status_02_2 {
+    border: 1px solid transparent;
+    background-color: rgb(209, 144, 22);
+    color: black;
+    box-shadow: none;
+}
+
+.status_03 {
+    border: 1px solid rgb(3, 128, 3);
+    background-color: rgb(6, 27, 2);
+    color: white;
+    box-shadow: 0 0 3px 2px rgba(10, 206, 36, 0.2);
+}
+
+.status_03_3 {
+    border: 1px solid transparent;
+    background-color: rgb(54, 202, 24);
+    color: black;
+}
+
+/* Marcadores de Materias */
+
+.mark_01 {
+    animation: mark_01 0.8s infinite alternate;
+}
+
+/* Animación de parpadeo */
+@keyframes mark_01 {
+    0% {
+        border-color: rgb(190, 190, 190); /* Color inicial del borde */
+    }
+    100% {
+        border-color: black; /* Color final del borde */  
+    }
+}
+
+.mark_02 {
+    animation: mark_02 0.8s infinite alternate;
+    box-shadow: 0 0 3px 2px rgba(226, 32, 7, 0.5);
+}
+
+@keyframes mark_02 {
+    0% {
+        border-color: crimson; /* Color inicial del borde */
+        box-shadow: 0 0 5px 5px rgba(226, 32, 7, 0.5);
+    }
+    100% {
+        border-color: rgb(43, 6, 6); /* Color final del borde */
+    }
+}
+
+.condition_buton {
+    margin: 2px;
+    border-radius: 25px;
+    width: 124px;
+    height: 32px;
+    white-space: nowrap;
+}
+
+.condition_button_no {
+    border-color: rgb(58, 5, 15);
+    background-color: rgb(37, 3, 10);
+    color: crimson;
+}
+
+.condition_button_ok {
+    border-color: green;
+    background-color: rgb(0, 34, 0);
+    color: lightgreen;
+}
+
+footer {
+    display: flex;
+    background-color: rgb(12, 12, 12);
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
