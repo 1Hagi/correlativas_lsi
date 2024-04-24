@@ -522,7 +522,7 @@ class Subject {
             dropdown_0.innerHTML = 
             `<p>Requerimientos para CURSAR</p>
             <div style="margin-top: 8px;">` + this.view_conditions_1()+ `</div>
-            <p style="margin: 15px 0 10px 0" >Requisitos para <br> Promocionar o Rendir Final<p>` + this.view_conditions_2();
+            <p style="margin: 10px 0 10px 0" >Requisitos para <br> Promocionar o Rendir Final<p>` + this.view_conditions_2();
 
             if(this._conditions_02 != 0) {
                 let requeriments = document.getElementById("subject_dropdown_" + this._id + "_1_1");
