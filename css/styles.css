@@ -4,6 +4,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+
     justify-content: space-between;
     background-color: black;
     color: white;
@@ -32,6 +33,21 @@ h1 {
     font-size: 2rem;
     letter-spacing: 5px;
 }
+
+.beta {
+    color:chartreuse; 
+    display: inline; 
+    font-size: 18px; 
+    font-weight: 600;
+}
+
+.unne_logo {
+    position: absolute; 
+    width: 120px; 
+    right: 0; 
+    margin: 15px;
+}
+
 
 h2 {
     text-align: center;
@@ -266,6 +282,221 @@ button {
     border-radius: 5px;
 }
 
+.condition_buton {
+    margin: 2px;
+    border-radius: 25px;
+    width: 124px;
+    height: 32px;
+    white-space: nowrap;
+}
+
+.condition_button_no {
+    border-color: rgb(58, 5, 15);
+    background-color: rgb(37, 3, 10);
+    color: crimson;
+}
+
+.condition_button_ok {
+    border-color: green;
+    background-color: rgb(0, 34, 0);
+    color: lightgreen;
+}
+
+footer {
+    display: flex;
+    background-color: rgb(12, 12, 12);
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+    ╔═════════════════════════════════════════════════════════════════════╗
+    ║ ███████████████████████████████████████████████████████████████████ ║
+    ║ ████████████████████████ MEDIA QUERY MOBILE ███████████████████████ ║
+    ║ ███████████████████████████████ 480 ███████████████████████████████ ║
+    ║ ███████████████████████████████████████████████████████████████████ ║
+    ╚═════════════════════════════════════════════════════════════════════╝
+*/
+
+@media (max-width: 480px) {
+    /* Header */
+    
+    h1 {
+        text-align: center;
+        padding: 0.1rem;
+        font-weight: 600;
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+    }
+
+    h2 {
+        text-align: center;
+        padding: 5px;
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+
+    .beta { 
+        font-size: 8px; 
+        font-weight: 600;
+        letter-spacing: normal;
+    }
+
+    .unne_logo {
+        position: absolute; 
+        width: 70px; 
+        right: 0; 
+        margin-top: 40px;
+        margin-right: 15px;
+    }
+
+    /* Main */
+
+    .main {
+        touch-action: manipulation;
+    }
+
+    .cuatrimestre_number_column {
+        font-size: 12px;
+    }
+
+    .subject_container {
+        margin: 20px 10px 20px 10px;
+        width: 120px;
+        height: 35px;
+        border-radius: 9px;
+        border: solid 1px white;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.486);
+    }
+
+    .subject_id {
+        display: flex;
+        font-family: 'Roboto', sans-serif;
+        flex-direction: column;
+        background-color: black;
+        border-radius: 9px 0 0 9px;
+        flex-grow: 1;
+        align-items: stretch;
+        justify-content: center;
+        font-size: 10px;
+        max-width: 22px;
+    }
+
+    .subject_name {
+        font-size: 8px;
+        flex-grow: 2;
+        width: 50px;
+        margin: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .subject_status {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Roboto', sans-serif;
+        background-color: black;
+        border-radius: 9px;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+        max-width: 22px;
+        min-width: 22px;
+    }
+
+    .subject_status_img {
+        width: 10px;
+    }
+
+    .subject_status_01 {
+        background-color: rgb(202, 132, 2);
+        font-weight: 400;
+        font-size: 12px;
+        color: black;
+    
+        -webkit-text-stroke-width: 0.8px;
+    }
+    
+    .subject_status_02 {
+        background-color: rgb(1 81 5);
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+    .subject_new {
+        color: white;
+        font-size: 8px;
+        min-width: 120px;
+        width: 100%;
+        letter-spacing: 1px;
+        animation: sub_new 0.8s infinite alternate;
+    }
+
+    .subject_requeriment {
+        padding: 5px 2px 5px 2px;
+        font-size: 9px;
+        min-width: 120px;
+        width: 100%;
+        animation: sub_req 0.8s infinite alternate;
+    }
+
+    .dropdown {
+        margin-top: 5px;
+        padding: 5px 2px 5px 2px;
+        font-size: 8px;
+        width: 120px;
+        min-width: 120px;
+        border-radius: 5px;
+        z-index: 2;
+        box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.397);
+    }
+    
+    .dropdown_2 {
+        display: inline;
+        flex-direction: column;
+        position: absolute;
+        align-items: center;
+        top: 201%;
+        margin-top: 5px;
+        padding: 5px 2px 5px 2px;
+        background-color: rgb(31, 31, 31);
+        color: white;
+        min-width: 160px;
+        width: 100%;
+        border-radius: 5px;
+        z-index: 2;
+        box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.397);
+    }
+
+    button {
+        font-family: 'Dosis', 'sans-serif';
+        font-weight: 600;
+        font-size: 4px;
+        border-radius: 5px;
+    }
+
+    .condition_buton {
+        margin: 2px;
+        border-radius: 25px;
+        width: 40px;
+        height: 15px;
+        white-space: nowrap;
+    }
+
+    /* Footer */
+
+    footer {
+        display: flex;
+        background-color: rgb(12, 12, 12);
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+    }
+}
+
 /* Estilos de los estados de las Materias */
 
 .status_00 {
@@ -332,34 +563,6 @@ button {
     100% {
         border-color: rgb(43, 6, 6); /* Color final del borde */
     }
-}
-
-.condition_buton {
-    margin: 2px;
-    border-radius: 25px;
-    width: 124px;
-    height: 32px;
-    white-space: nowrap;
-}
-
-.condition_button_no {
-    border-color: rgb(58, 5, 15);
-    background-color: rgb(37, 3, 10);
-    color: crimson;
-}
-
-.condition_button_ok {
-    border-color: green;
-    background-color: rgb(0, 34, 0);
-    color: lightgreen;
-}
-
-footer {
-    display: flex;
-    background-color: rgb(12, 12, 12);
-    height: 50px;
-    justify-content: center;
-    align-items: center;
 }
 
 .hidden {
