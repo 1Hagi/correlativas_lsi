@@ -323,6 +323,7 @@ footer {
     /* Header */
     
     h1 {
+        margin-top: 10px;
         text-align: center;
         padding: 0.1rem;
         font-weight: 600;
@@ -331,11 +332,16 @@ footer {
     }
 
     h2 {
+        margin-top: 5px;
         text-align: center;
         padding: 5px;
         font-weight: 500;
         font-size: 1rem;
         letter-spacing: 3px;
+    }
+
+    h3 {
+        font-size: 12px;
     }
 
     .beta { 
@@ -348,8 +354,8 @@ footer {
         position: absolute; 
         width: 70px; 
         right: 0; 
-        margin-top: 40px;
-        margin-right: 15px;
+        margin-top: 9vw;
+        margin-right: 12px;
     }
 
     /* Main */
@@ -398,7 +404,7 @@ footer {
         flex-direction: column;
         font-family: 'Roboto', sans-serif;
         background-color: black;
-        border-radius: 6px;
+        border-radius: 7px;
         flex-grow: 1;
         align-items: center;
         justify-content: center;
@@ -492,13 +498,21 @@ footer {
     footer {
         display: flex;
         background-color: rgb(12, 12, 12);
-        height: 30px;
+        height: 40px;
         justify-content: center;
         align-items: center;
         font-size: 12px;
     }
 }
 
+@media (min-width: 650px) {
+     .unne_logo {
+        position: absolute; 
+        right: 0; 
+        margin-top: 2vw;
+        margin-right: 12px;
+    }
+}
 /* Estilos de los estados de las Materias */
 
 .status_00 {
