@@ -221,19 +221,21 @@ class Subject {
                 }
   
                 if (subject_focus instanceof Subject) {
-                    if (!subject_focus.puede_cursar() && subject_focus._status < 1) {
-                        if ( subject_focus.es_requisito_faltante_para_cursar(this) ) {
-                            subject.classList.add("mark_02");
-                            subject.querySelector(".subject_new").classList.add("hidden");
-                            subject.querySelector(".subject_requeriment").classList.remove("hidden");
-                            subject.querySelector(".subject_id").classList.add("subject_id_red_mark");
-                        }
-                    } else if (!subject_focus.puede_aprobar() && subject_focus._status == 1) {
-                        if ( subject_focus.es_requisito_faltante_para_aprobar(this) ) {
-                            subject.classList.add("mark_02");
-                            subject.querySelector(".subject_new").classList.add("hidden");
-                            subject.querySelector(".subject_requeriment").classList.remove("hidden");
-                            subject.querySelector(".subject_id").classList.add("subject_id_red_mark");
+                    if (this._status < 2) {
+                        if (!subject_focus.puede_cursar() && subject_focus._status < 1) {
+                            if ( subject_focus.es_requisito_faltante_para_cursar(this) ) {
+                                subject.classList.add("mark_02");
+                                subject.querySelector(".subject_new").classList.add("hidden");
+                                subject.querySelector(".subject_requeriment").classList.remove("hidden");
+                                subject.querySelector(".subject_id").classList.add("subject_id_red_mark");
+                            }
+                        } else if (!subject_focus.puede_aprobar() && subject_focus._status == 1) {
+                            if ( subject_focus.es_requisito_faltante_para_aprobar(this) ) {
+                                subject.classList.add("mark_02");
+                                subject.querySelector(".subject_new").classList.add("hidden");
+                                subject.querySelector(".subject_requeriment").classList.remove("hidden");
+                                subject.querySelector(".subject_id").classList.add("subject_id_red_mark");
+                            }
                         }
                     }
                 }

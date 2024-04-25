@@ -28,7 +28,7 @@ const subject_303 = new Subject(303, "Ingeniería de Software I", [3, 1], [[204,
 const subject_304 = new Subject(304, "Taller de Programación II", [3, 2], [[301, 1],[303, 1],[204, 2],[205, 2]], [301, 303], 0);
 const subject_305 = new Subject(305, "Probabilidad y Estadística", [3, 2], [[203, 1]], [203], 0);
 const subject_306 = new Subject(306, "Bases de Datos I", [3, 2], [[204, 1],[202, 2]], [303], 0);
-const subject_307 = new Subject(307, "Inglés Técnico Informático (extracurricular)", [3, 2], 0, 0, 0);
+const subject_307 = new Extracurricular(307, "Inglés Técnico Informático (extracurricular)", [3, 2], 0, 0, 0);
 
 const subject_401 = new Subject(401, "Ingeniería de Software II", [4, 1], [[303, 1],[206, 2]], [303], 0);
 const subject_402 = new Subject(402, "Economía Aplicada", [4, 1], [[303, 1],[206,2]], [303], 0);
@@ -38,7 +38,7 @@ const subject_404 = new Subject(404, "Redes de Datos", [4, 2], [[302, 2]], [302]
 const subject_405 = new Subject(405, "Bases de Datos II", [4, 2], [[306, 1],[303, 2]], [306], 0);
 const subject_406 = new Subject(406, "Métodos Computacionales", [4, 2], [[305,1], [203, 2]], [305], 0);
 
-const subject_501 = new Subject(501, "Proyecto Final de Carrera", [5, 1], [[404, 1], [405, 1], [401, 2]], [101, 102, 103, 104, 105, 201, 202, 203, 204, 205, 206, 301, 302, 303, 304, 305, 306, 307, 401, 402, 403, 404, 405, 406, 502, 503, 504, 505], 0);
+const subject_501 = new Subject(501, "Proyecto Final de Carrera", [5, 1], [[404, 1], [405, 1], [401, 2]], [101, 102, 103, 104, 105, 201, 202, 203, 204, 205, 206, 301, 302, 303, 304, 305, 306, 307, 401, 402, 403, 404, 405, 406, 502, 503, 504, 505], 0, 1);
 const subject_502 = new Subject(502, "Auditoria y Seguridad Informática", [5, 1], [[404, 1], [405, 1], [401, 2]], [404, 405], 0);
 const subject_503 = new Subject(503, "Optativa I", [5, 1], [[403, 1], [305, 2]], [403], 0);
 
