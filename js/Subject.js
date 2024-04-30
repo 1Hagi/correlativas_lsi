@@ -10,11 +10,11 @@ class Subject {
     }
 
     getId() {
-        return this._apellido;
+        return this._id;
     }
 
-    setId(apellido) {
-        this._apellido = apellido;
+    setId(id) {
+        this._id = id;
     }
 
     getNombre() {
@@ -25,25 +25,41 @@ class Subject {
         this._nombre = nombre;
     }
 
-    getConditions() {
-        return this._apellido;
+    getUbication() {
+        return this._ubication;
     }
 
-    setConditions(apellido) {
-        this._apellido = apellido;
+    setUbication(ubication) {
+        this._ubication = ubication;
+    }
+
+    getConditions_01() {
+        return this._conditions_01;
+    }
+
+    setConditions_01(conditions_01) {
+        this._conditions_01 = conditions_01;
+    }
+
+    getConditions_02() {
+        return this._conditions_02;
+    }
+
+    setConditions_02(conditions_02) {
+        this._conditions_02 = conditions_02;
     }
 
     getStatus() {
-        return this._apellido;
+        return this._status;
     }
 
-    setStatus(apellido) {
-        this._apellido = apellido;
+    setStatus(status) {
+        this._status = status;
     }
 
     puede_cursar() {
 
-        /* Éste método revisa su existe alguna materia que no cumpla los requisitos para cursar */
+        /* Éste método revisa su existe alguna materia que no cumpla los requisitos para CURSAR */
         /* Devuelve TRUE si puede cursar, caso contrario devuelve FALSE */
         let value = true;
 
@@ -60,8 +76,6 @@ class Subject {
 
                     if(material._id == subject_id) {
 
-                        /* debe mejorarse el ultimo if y los nombres de las array */
-
                         if(material._status < subject_status) {
                             value = false;
                         }
@@ -73,6 +87,9 @@ class Subject {
     }
 
     puede_aprobar() {
+
+        /* Éste método revisa su existe alguna materia que no cumpla los requisitos para APROBAR */
+        /* Devuelve TRUE si puede cursar, caso contrario devuelve FALSE */
 
         let value = true;
 
@@ -88,8 +105,6 @@ class Subject {
                 subjects.forEach(material => {
 
                     if(material._id == subject_id) {
-
-                        /* debe mejorarse el ultimo if y los nombres de las array */
 
                         if(material._status < 2) {
                             value = false;
@@ -186,7 +201,7 @@ class Subject {
                         subject.classList.remove("status_00");
                         subject.querySelector(".subject_status_img").classList.remove("disabled");
 
-                        /* Mostrar el aviso de New */
+                        /* Mostrar el aviso de Nueva Materia Desbloqueada */
                         if (this._conditions_01 != 0) {
                             subject.querySelector(".subject_new").classList.remove("hidden");
                         }
@@ -402,6 +417,8 @@ class Subject {
 
     view_conditions_1() {
 
+        /* Actualiza la vista de las condiciones para CURSAR una Materia */
+
         let conditions = "";
 
         if(!this.puede_cursar()) {
@@ -429,6 +446,8 @@ class Subject {
     }
 
     view_conditions_2() {
+
+        /* Actualiza la vista de las condiciones para APROBAR una Materia */
 
         let button_3 = document.getElementById("button_" + this._id +"_2");
 
@@ -483,6 +502,7 @@ class Subject {
     }
 
     es_requisito_faltante_para_cursar(materia) {
+        /* Comprueba si la Materia ingresada por parámetro es requisito necesario para cursar */
         let resultado = false;
         if(this._conditions_01 == 0) {
             resultado = false;
@@ -498,8 +518,8 @@ class Subject {
     }
 
     es_requisito_faltante_para_aprobar(materia) {
+        /* Comprueba si la Materia ingresada por parámetro es requisito necesario para Aprobar */
         let resultado = false;
-
         if(this._conditions_02 == 0) {
             resultado = false;
         } else {
@@ -510,11 +530,12 @@ class Subject {
                 }
             });    
         }      
-        
         return resultado;
     }
 
     actualizar_dropdowns() {
+
+        /* Actualiza el dropdown de cada Materia con los datos correspondientes. */
 
         let dropdown_0 = document.getElementById("subject_dropdown_" + this._id + "_0");
         dropdown_0.innerHTML = "";
