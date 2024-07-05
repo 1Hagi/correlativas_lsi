@@ -316,6 +316,48 @@ footer {
     align-items: center;
 }
 
+.container_bar_progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+progress {
+    width: 120px;
+    height: 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: rgb(36, 36, 36);
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background-color: green;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 0 6px 0.5px green;
+}
+
+.degree_img {
+    height: 25px;
+    margin-right: 5px;
+}
+
+.degree_text {
+    color: greenyellow;
+    text-shadow: 1px 1px 4px green;
+    width: 50px;
+}
+
+.bar_tittle {
+    margin-right: 5px;
+    margin-left: 30px;
+}
+
 /*
     ╔═════════════════════════════════════════════════════════════════════╗
     ║ ███████████████████████████████████████████████████████████████████ ║
@@ -498,6 +540,23 @@ footer {
         width: 65px;
         height: 18px;
         white-space: nowrap;
+    }
+
+    progress {
+        height: 15px;
+    }
+
+    .container_bar_progress {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .degree_text {
+        font-size: 8px;
+    }
+
+    .bar_tittle {
+        margin-left: 5px;
     }
 
     /* Footer */

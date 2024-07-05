@@ -3,7 +3,8 @@
 // ID de la materia (número), 
 // Nombre (String),
 // Año y Cuatrimestre de la materia (Array de dos números [año, cuatrimestre]),
-// Condiciones * POR DEFINIR . . .  *
+// Condiciones: Cada materia tiene dos codiciones, una para ser cursada y otra para ser aprobada.
+// Condiciones: Cada condicion consta de un array con pares de enteros, donde el primer entero corresponde a un ID de una materia y el segundo entero a un estado requisito de dicha materia.
 // Estado actual del alumno en cada materia: 0 = Sin cursar, 1 = Regular, 2 = Aprobada.
 
 const subject_101 = new Subject(101, "Algoritmos y Estructura de Datos I", [1, 1], 0, 0, 0);
@@ -87,3 +88,30 @@ let subjects = [
 for(let i = 0; i < subjects.length; i++) {
     subjects[i].create();
 };
+
+// Barras de Progreso
+
+const analistaProgressBar = document.getElementById('analista_degree');
+const licenciadoProgressBar = document.getElementById('licenciado_degree');
+const analistaPorcentaje = document.getElementById('analista_degree_text');
+const licenciadoPorcentaje = document.getElementById('licenciado_degree_text');
+let analista_progress = 0;
+let licenciado_progress = 0;
+
+document.addEventListener('click', (event) => {
+
+    analista_progress = 0;
+    licenciado_progress = 0;
+
+    subjects.forEach(subject => {
+        if(subject._id < 401) {
+            analista_progress += subject._status;
+        }
+        licenciado_progress += subject._status;
+    });
+
+    analistaProgressBar.value = analista_progress;
+    licenciadoProgressBar.value = licenciado_progress;
+    analistaPorcentaje.innerHTML = (analista_progress * 100 / 36).toFixed(1) + " %";
+    licenciadoPorcentaje.innerHTML = (licenciado_progress * 100 / 58).toFixed(1) + " %";
+})
