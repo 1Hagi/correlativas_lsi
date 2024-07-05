@@ -354,8 +354,10 @@ progress::-webkit-progress-value {
 }
 
 .bar_tittle {
+    font-size: 14px;
     margin-right: 5px;
     margin-left: 30px;
+    color: lightgrey;
 }
 
 /*
@@ -551,11 +553,28 @@ progress::-webkit-progress-value {
         text-align: center;
     }
 
+    progress {
+        border-radius: 2px;
+    }
+    
+    progress::-webkit-progress-bar {
+        border-radius: 2px;
+    }
+
+    progress::-webkit-progress-value {
+        border-radius: 2px 0 0 2px;
+    }
+
     .degree_text {
         font-size: 8px;
     }
 
+    .degree_img {
+        margin-right: 0;
+    }
+
     .bar_tittle {
+        font-size: 8px;
         margin-left: 5px;
     }
 
