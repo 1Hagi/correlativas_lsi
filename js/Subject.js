@@ -432,7 +432,6 @@ class Subject {
                                 + `<div style="flexgrow: 1">` + subject._id + `</div>`
                                 + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
                                 + `<div style="flexgrow: 1; width: 10%">` + `R` + `</div>`
-                                + `<div style="flexgrow: 1">` + `✖` + `</div>`
                             + `</button>`;
                         } else {
                             conditions += 
@@ -440,7 +439,6 @@ class Subject {
                                 + `<div style="flexgrow: 1">` + subject._id + `</div>`
                                 + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
                                 + `<div style="flexgrow: 1; width: 10%">` + `R` + `</div>`
-                                + `<div style="flexgrow: 1">` + `✓` + `</div>`
                             + `</button>`;
                         }
                     } 
@@ -451,7 +449,6 @@ class Subject {
                                 + `<div style="flexgrow: 1">` + subject._id + `</div>`
                                 + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
                                 + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
-                                + `<div style="flexgrow: 1">` + `✖` + `</div>`
                             + `</button>`;
                         } else {
                             conditions += 
@@ -459,7 +456,6 @@ class Subject {
                                 + `<div style="flexgrow: 1">` + subject._id + `</div>`
                                 + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
                                 + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
-                                + `<div style="flexgrow: 1">` + `✓` + `</div>`
                             + `</button>`;
                         }
                     }
@@ -500,7 +496,6 @@ class Subject {
                             + `<div style="flexgrow: 1">` + subject._id + `</div>`
                             + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
                             + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
-
                         + `</button>`;
                     }
                     if (datos_materia == subject._id && subject._status == 2) {
@@ -509,7 +504,6 @@ class Subject {
                             + `<div style="flexgrow: 1">` + subject._id + `</div>`
                             + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
                             + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
-
                         + `</button>`;
                     }
                 });
