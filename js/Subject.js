@@ -236,6 +236,7 @@ class Subject {
                 }
   
                 if (subject_focus instanceof Subject) {
+                    subject.classList.remove("mark_01");
                     if (this._status < 2) {
                         if (!subject_focus.puede_cursar() && subject_focus._status < 1) {
                             if ( subject_focus.es_requisito_faltante_para_cursar(this) ) {
@@ -426,16 +427,40 @@ class Subject {
                 subjects.forEach(subject => {
                     if(datos_materia[1] == 1 && subject._id == datos_materia[0]) {
                         if(subject._status < datos_materia[1]) {
-                            conditions += `<button class="condition_buton condition_button_no" disabled>` + datos_materia[0] + ` Regular ✖ </button>`
+                            conditions += 
+                            `<button class="condition_buton condition_button_no" disabled>`
+                                + `<div style="flexgrow: 1">` + subject._id + `</div>`
+                                + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
+                                + `<div style="flexgrow: 1; width: 10%">` + `R` + `</div>`
+                                + `<div style="flexgrow: 1">` + `✖` + `</div>`
+                            + `</button>`;
                         } else {
-                            conditions += `<button class="condition_buton condition_button_ok" disabled>` + datos_materia[0] + ` Regular ✓ </button>`
+                            conditions += 
+                            `<button class="condition_buton condition_button_ok" disabled>`
+                                + `<div style="flexgrow: 1">` + subject._id + `</div>`
+                                + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
+                                + `<div style="flexgrow: 1; width: 10%">` + `R` + `</div>`
+                                + `<div style="flexgrow: 1">` + `✓` + `</div>`
+                            + `</button>`;
                         }
                     } 
                     if (datos_materia[1] == 2 && subject._id == datos_materia[0]) {
                         if(subject._status < datos_materia[1]) {
-                            conditions += `<button class="condition_buton condition_button_no" disabled>` + datos_materia[0] + ` Aprobado ✖ </button>`
+                            conditions += 
+                            `<button class="condition_buton condition_button_no" disabled>`
+                                + `<div style="flexgrow: 1">` + subject._id + `</div>`
+                                + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
+                                + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
+                                + `<div style="flexgrow: 1">` + `✖` + `</div>`
+                            + `</button>`;
                         } else {
-                            conditions += `<button class="condition_buton condition_button_ok" disabled>` + datos_materia[0] + ` Aprobado ✓ </button>`
+                            conditions += 
+                            `<button class="condition_buton condition_button_ok" disabled>`
+                                + `<div style="flexgrow: 1">` + subject._id + `</div>`
+                                + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
+                                + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
+                                + `<div style="flexgrow: 1">` + `✓` + `</div>`
+                            + `</button>`;
                         }
                     }
                 });
@@ -470,10 +495,22 @@ class Subject {
             this._conditions_02.forEach(datos_materia => {
                 subjects.forEach(subject => {
                     if (datos_materia == subject._id && subject._status < 2) {
-                        conditions += `<button class="condition_buton condition_button_no" disabled>` + datos_materia + ` Aprobado ✖ </button>`
+                        conditions += 
+                        `<button class="condition_buton condition_button_no" disabled>`
+                            + `<div style="flexgrow: 1">` + subject._id + `</div>`
+                            + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
+                            + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
+
+                        + `</button>`;
                     }
                     if (datos_materia == subject._id && subject._status == 2) {
-                        conditions += `<button class="condition_buton condition_button_ok" disabled>` + this._id + ` Aprobado ✓ </button>`
+                        conditions += 
+                        `<button class="condition_buton condition_button_ok" disabled>`
+                            + `<div style="flexgrow: 1">` + subject._id + `</div>`
+                            + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
+                            + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
+
+                        + `</button>`;
                     }
                 });
             });        
@@ -545,11 +582,12 @@ class Subject {
             dropdown_0.innerHTML = 
             `<p>Requerimientos para CURSAR</p>
             <div style="margin-top: 8px;">` + this.view_conditions_1()+ `</div>
-            <p style="margin: 10px 0 10px 0" >Requisitos para <br> Promocionar o Rendir Final<p>` + this.view_conditions_2();
+            <p style="margin: 10px 0 10px 0" >Requisitos para <br> Promocionar o Rendir Final</p>` +
+            `<div class="conditions-butons-div">` + this.view_conditions_2() + `</div>`;
 
             if(this._conditions_02 != 0) {
                 let requeriments = document.getElementById("subject_dropdown_" + this._id + "_1_1");
-                requeriments.innerHTML = `<p style="margin: 15px 0 10px 0" >Requisitos para <br> Promocionar o Rendir Final<p>` + this.view_conditions_2();
+                requeriments.innerHTML = `<p style="margin: 15px 0 10px 0" >Requisitos para <br> Promocionar o Rendir Final</p>` + this.view_conditions_2();
             }
 
         } else if (this._status == 1) {
@@ -557,7 +595,7 @@ class Subject {
 
             if(this._conditions_02 != 0) {
                 let requeriments = document.getElementById("subject_dropdown_" + this._id + "_1_1");
-                requeriments.innerHTML = `<p style="margin: 15px 0 10px 0" >Requisitos para <br> Promocionar o Rendir Final<p>` + this.view_conditions_2();
+                requeriments.innerHTML = `<p style="margin: 15px 0 10px 0" >Requisitos para <br> Promocionar o Rendir Final</p>` + this.view_conditions_2();
             }
 
         }
