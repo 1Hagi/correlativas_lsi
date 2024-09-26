@@ -430,14 +430,14 @@ class Subject {
                             conditions += 
                             `<button class="condition_buton condition_button_no" disabled>`
                                 + `<div style="flexgrow: 1">` + subject._id + `</div>`
-                                + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
+                                + `<div style="flexgrow: 4; flex-basis: 90%; padding: 0 3px 0 3px;">` + subject._nombre + `</div>`
                                 + `<div style="flexgrow: 1; width: 10%">` + `R` + `</div>`
                             + `</button>`;
                         } else {
                             conditions += 
                             `<button class="condition_buton condition_button_ok" disabled>`
                                 + `<div style="flexgrow: 1">` + subject._id + `</div>`
-                                + `<div style="flexgrow: 4; flex-basis: 90%;">` + subject._nombre + `</div>`
+                                + `<div style="flexgrow: 4; flex-basis: 90%; padding: 0 3px 0 3px;">` + subject._nombre + `</div>`
                                 + `<div style="flexgrow: 1; width: 10%">` + `R` + `</div>`
                             + `</button>`;
                         }
