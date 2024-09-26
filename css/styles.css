@@ -72,12 +72,15 @@ main {
 }
 
 .year_column {
+    display: flex;
+    flex-direction: column;
     border-left: dashed 2px rgb(37, 37, 37);
 }
 
 .year_sub_column {
     display: flex;
     flex-direction: row;
+    flex-basis: 90%;
 }
 
 .cuatrimestre_column {
@@ -104,6 +107,7 @@ main {
     flex-grow: 4;
     justify-content: center;
     height: 400px;
+    justify-content: space-evenly;
 }
 
 .subject_container {
