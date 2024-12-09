@@ -14,7 +14,6 @@ body {
 
 html, body {
     height: 100vh;
-    overflow: hidden;
 }
 
 /* Estilo del scroll */
@@ -98,6 +97,10 @@ main {
     -ms-user-select: none;
 }
 
+main::-webkit-scrollbar-corner {
+    background-color: black;
+}
+
 .year_column {
     display: flex;
     flex-direction: column;
@@ -133,7 +136,7 @@ main {
     flex-direction: column;
     flex-grow: 4;
     justify-content: center;
-    height: 400px;
+    height: 0;
     justify-content: space-evenly;
 }
 

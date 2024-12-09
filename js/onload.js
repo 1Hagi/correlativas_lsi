@@ -119,24 +119,27 @@ document.addEventListener('click', (event) => {
 // Interacción con el scroll vertical y horizontal al usar el ratón.
 
 const contenedor = document.getElementsByTagName("main")[0];
+// Detectar si estamos en un dispositivo con mouse
+const hasMouse = matchMedia("(pointer: fine)").matches;
+if (hasMouse) {
+    contenedor.addEventListener("wheel", (event) => {
+        // Evitamos el comportamiento predeterminado
+        event.preventDefault();
 
-contenedor.addEventListener("wheel", (event) => {
-    // Evitamos el comportamiento predeterminado
-    event.preventDefault();
+        // Detectamos si hay scroll vertical disponible
+        const isScrollableVertical = 
+        contenedor.scrollHeight > contenedor.clientHeight;
 
-    // Detectamos si hay scroll vertical disponible
-    const isScrollableVertical = 
-    contenedor.scrollHeight > contenedor.clientHeight;
+        // Variables para determinar desplazamiento
+        const deltaX = event.deltaX || 0; // Movimiento horizontal del evento
+        const deltaY = event.deltaY || 0; // Movimiento vertical del evento
 
-    // Variables para determinar desplazamiento
-    const deltaX = event.deltaX || 0; // Movimiento horizontal del evento
-    const deltaY = event.deltaY || 0; // Movimiento vertical del evento
-
-    // Si hay scroll vertical, priorizamos el movimiento vertical
-    if (isScrollableVertical && Math.abs(deltaY) > Math.abs(deltaX)) {
-        contenedor.scrollTop += deltaY;
-    } else {
-        // Si no hay scroll vertical, aplicamos el desplazamiento horizontal
-        contenedor.scrollLeft += deltaY; // Usamos deltaY para desplazarnos horizontalmente
-    }
-});
+        // Si hay scroll vertical, priorizamos el movimiento vertical
+        if (isScrollableVertical && Math.abs(deltaY) > Math.abs(deltaX)) {
+            contenedor.scrollTop += deltaY;
+        } else {
+            // Si no hay scroll vertical, aplicamos el desplazamiento horizontal
+            contenedor.scrollLeft += deltaY; // Usamos deltaY para desplazarnos horizontalmente
+        }
+    });
+}
