@@ -12,6 +12,11 @@ body {
     font-family: 'Dosis', sans-serif;
 }
 
+html, body {
+    height: 100vh;
+    overflow: hidden;
+}
+
 /* Estilo del scroll */
 /* Para navegadores WebKit (Chrome, Safari) */
 ::-webkit-scrollbar {
@@ -84,6 +89,13 @@ main {
     flex-direction: row;
     overflow-x: scroll;
     flex-grow: 1;
+    height: 100vh;
+
+    /* Deshabilitar marcado de texto */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .year_column {

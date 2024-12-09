@@ -115,3 +115,28 @@ document.addEventListener('click', (event) => {
     analistaPorcentaje.innerHTML = (analista_progress * 100 / 36).toFixed(1) + " %";
     licenciadoPorcentaje.innerHTML = (licenciado_progress * 100 / 58).toFixed(1) + " %";
 })
+
+// Interacción con el scroll vertical y horizontal al usar el ratón.
+
+const contenedor = document.getElementsByTagName("main")[0];
+
+contenedor.addEventListener("wheel", (event) => {
+    // Evitamos el comportamiento predeterminado
+    event.preventDefault();
+
+    // Detectamos si hay scroll vertical disponible
+    const isScrollableVertical = 
+    contenedor.scrollHeight > contenedor.clientHeight;
+
+    // Variables para determinar desplazamiento
+    const deltaX = event.deltaX || 0; // Movimiento horizontal del evento
+    const deltaY = event.deltaY || 0; // Movimiento vertical del evento
+
+    // Si hay scroll vertical, priorizamos el movimiento vertical
+    if (isScrollableVertical && Math.abs(deltaY) > Math.abs(deltaX)) {
+        contenedor.scrollTop += deltaY;
+    } else {
+        // Si no hay scroll vertical, aplicamos el desplazamiento horizontal
+        contenedor.scrollLeft += deltaY; // Usamos deltaY para desplazarnos horizontalmente
+    }
+});
