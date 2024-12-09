@@ -192,6 +192,7 @@ class Subject {
             if (!dropdown_1.contains(event.target) && !subject.contains(event.target)) {
 
                 subject.classList.remove("mark_02");
+                // subject.classList.remove("subject_onfocus");
                 subject.querySelector(".subject_id").classList.remove("subject_id_red_mark");
                 subject.querySelector(".subject_requeriment").classList.add("hidden");
 
@@ -385,6 +386,7 @@ class Subject {
 
         subject.classList.remove("mark_01");
         subject.classList.remove("mark_02");
+        // subject.classList.add("subject_onfocus");
         subject.querySelector(".subject_id").classList.remove("subject_id_red_mark");
         subject.querySelector(".subject_requeriment").classList.add("hidden");
         subject.querySelector(".subject_new").classList.add("hidden");
