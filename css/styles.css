@@ -365,6 +365,11 @@ footer {
     align-items: center;
 }
 
+.github_img {
+    width: 1.2rem;
+    background-image: url("../img/github.png");
+}
+
 .container_bar_progress {
     display: flex;
     justify-content: center;
