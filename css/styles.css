@@ -201,15 +201,19 @@ main::-webkit-scrollbar-corner {
 
 .subject_status {
     display: flex;
+    position: absolute;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
-    background-color: black;
-    border-radius: 15px;
+    background-color: rgb(19, 19, 19);
+    border-radius: 50%;
     flex-grow: 1;
     align-items: center;
     justify-content: center;
-    max-width: 55px;
-    min-width: 55px;
+    width: 40px;
+    height: 40px;
+    bottom: -20px;
+    right: -20px;
+    border: solid 1px rgb(24, 24, 24);
 }
 
 .subject_id_01 {
@@ -227,7 +231,7 @@ main::-webkit-scrollbar-corner {
 .subject_status_01 {
     background-color: rgb(202, 132, 2);
     font-weight: 800;
-    font-size: 40px;
+    font-size: 30px;
     color: black;
 
     -webkit-text-stroke-width: 1px;
@@ -237,7 +241,7 @@ main::-webkit-scrollbar-corner {
 .subject_status_02 {
     background-color: rgb(1 81 5);
     font-weight: 800;
-    font-size: 40px;
+    font-size: 30px;
     color: black;
 
     -webkit-text-stroke-width: 1px;

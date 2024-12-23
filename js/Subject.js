@@ -127,7 +127,7 @@ class Subject {
                                 <div class="subject_id">` + this._id + `</div>
                                 <p class="subject_name">` + this._nombre + `</p>
                                 <div class="subject_status">
-                                    <img class="subject_status_img ` + ((this.puede_cursar())? ' ': 'disabled') + `" src="./img/padlock_open.png" alt="padlock" />
+                                    <img class="subject_status_img ` + ((this.puede_cursar()) ? ' ': 'disabled') + `" src="./img/padlock_open.png" alt="padlock" />
                                 </div>
 
                                 <div class="subject_new hidden">Nuevo Desbloqueado</div>
