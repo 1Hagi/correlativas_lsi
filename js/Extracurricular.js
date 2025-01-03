@@ -221,9 +221,40 @@ class Extracurricular extends Subject {
             document.getElementById("button_" + this._id + "_2").disabled = false;
             document.getElementById("button_" + this._id + "_" + status).disabled = true;
 
+            this.crearEfectoFestejo(subject);
+
             /* Llamar a los demás objetos que actualicen su estado visual */
 
         }
     }
     
+    crearEfectoFestejo(subject) {
+        // Crear el elemento <img>
+        const celeb = document.createElement("img");
+        celeb.src = "./img/effect-celebration.gif";
+        celeb.alt = "Celebration";
+        celeb.className = "celeb-eff";
+    
+        // Agregar el GIF al body
+        subject.appendChild(celeb);
+    
+        // Esperar el tiempo de duración para eliminar el GIF
+        setTimeout(() => {
+            celeb.remove(); // Elimina el GIF
+        }, 2500);
+
+        // Crear el elemento <img>
+        const celeb2 = document.createElement("img");
+        celeb2.src = "./img/effect-celebration-2.gif";
+        celeb2.alt = "Celebration";
+        celeb2.className = "celeb-eff";
+    
+        // Agregar el GIF al body
+        subject.appendChild(celeb2);
+    
+        // Esperar el tiempo de duración para eliminar el GIF
+        setTimeout(() => {
+            celeb2.remove(); // Elimina el GIF
+        }, 2500);
+    }
 }

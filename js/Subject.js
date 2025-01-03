@@ -600,7 +600,6 @@ class Subject {
     }
 
     crearEfectoFestejo(subject) {
-        console.log("ENTRO EN CREAR FESTEJO");
         // Crear el elemento <img>
         const celeb = document.createElement("img");
         celeb.src = "./img/effect-celebration.gif";
@@ -613,6 +612,20 @@ class Subject {
         // Esperar el tiempo de duración para eliminar el GIF
         setTimeout(() => {
             celeb.remove(); // Elimina el GIF
+        }, 2500);
+
+        // Crear el elemento <img>
+        const celeb2 = document.createElement("img");
+        celeb2.src = "./img/effect-celebration-2.gif";
+        celeb2.alt = "Celebration";
+        celeb2.className = "celeb-eff";
+    
+        // Agregar el GIF al body
+        subject.appendChild(celeb2);
+    
+        // Esperar el tiempo de duración para eliminar el GIF
+        setTimeout(() => {
+            celeb2.remove(); // Elimina el GIF
         }, 2500);
     }
 }
