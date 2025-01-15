@@ -1,3 +1,121 @@
+[data-theme=dark],
+:root:not([data-theme=light]) {
+    --background-color: black;
+    --unne-logo: url("../img/unne_white_logo.png");
+    --title-text-shadow: ;
+    --title-color: ;
+    --main-scrollbar-color: rgb(42, 42, 42);
+    --text-color: white;
+    --footer-color: rgb(12, 12, 12);
+    --version-color: chartreuse;
+    --toggle-btn-img: url("../img/sun.png");
+    --linea-solida: solid 2px grey;
+    --linea-entrecortada: dashed 2px rgb(37, 37, 37);
+    --subject-container-background: rgb(19, 19, 19);
+    --subject-container-border-color: black;
+    --subject-container-shadow: 0 0 10px rgba(255, 255, 255, 0.486);
+    --subject-container-disabled: rgb(17, 17, 17);
+    --subject-container-disabled-text: rgb(82, 82, 82);
+    --subject-disabled-img: brightness(40%);
+
+    --subject-status00-onfocus-shadow: 0 0 20px rgba(255, 255, 255, 0.886);
+
+    --subject-01-container-bg-color: rgb(26, 15, 1);
+    --subject-01-container-status-color: black;
+    --subject-01-container-shadow: 0 0 10px 5px rgba(250, 167, 12, 0.2);
+    --subject-01-id-color: orange;
+    --subject-01-status-bg-color: rgb(202, 132, 2);
+    --subject-01-status-stroke-color: rgb(255 191 115);
+
+    --subject-02-container-bg-color: rgb(6, 27, 2);
+    --subject-02-container-status-color: black;
+    --subject-02-container-shadow: 0 0 10px 5px rgba(10, 206, 36, 0.2);
+    --subject-02-id-color: green;
+    --subject-02-status-bg-color: rgb(1 81 5);
+    --subject-02-status-stroke-color: rgb(169 255 129);
+
+    --subject-title-new-animation: sub_new_dark 0.8s infinite alternate;
+    --subject-requeriment-color: crimson;
+    --animation-redmark: mark_02_dark 0.8s infinite alternate;
+    --dropdown-bg-color: rgb(31, 31, 31);
+    --dropdown-border: none;
+    --dropdown-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.397);
+
+    --condition-button-no-border-color: rgb(58, 5, 15);
+    --condition-button-no-bg-color: rgb(37, 3, 10);
+    --condition-button-no-color: crimson;
+    --condition-button-ok-border-color: green;
+    --condition-button-ok-bg-color: rgb(0, 34, 0);
+    --condition-button-ok-color: lightgreen;
+
+
+    --barprogress-color: green;
+    --barprogress-bg-color: rgb(36, 36, 36);
+    --barprogress-barshadow: 0 0 6px 0.5px green;
+    --barprogress-text: greenyellow;
+    --barprogress-text-shadow: 1px 1px 4px green;
+    --barprogress-title: lightgrey;
+}
+
+[data-theme=light],
+:root:not([data-theme=dark]) {
+    --background-color: rgb(225, 225, 225);
+    --unne-logo: url("../img/unne_black_logo.png");
+    --title-shadow: 0 0 2px rgb(70, 70, 70);
+    --title-color: rgb(61, 61, 61);
+    --main-scrollbar-color: rgb(180, 180, 180);
+    --text-color: rgb(10, 10, 10);
+    --footer-color: rgb(200, 200, 200);
+    --version-color: rgb(124, 238, 10);
+    --toggle-btn-img: url("../img/moon.png");
+    --linea-solida: solid 2px rgb(59, 59, 59);
+    --linea-entrecortada: dashed 2px rgb(138, 138, 138);
+    --subject-container-background: rgb(165, 165, 165);
+    --subject-container-border-color: white;
+    --subject-container-shadow: 0 0 10px 3.5px rgba(0, 0, 0, 0.486);
+    --subject-container-disabled: rgb(204, 204, 204);
+    --subject-container-disabled-text: rgb(94, 94, 94);
+    --subject-disabled-img: grayscale(200%);
+
+    --subject-status00-onfocus-shadow: 0 0 10px 1px rgb(22, 22, 22);
+
+    --subject-01-container-bg-color: rgb(226, 161, 76);
+    --subject-01-container-status-color: white;
+    --subject-01-container-shadow: 0 0 10px 3.5px rgba(250, 167, 12, 0.568);
+    --subject-01-id-color: rgb(151, 98, 0);
+    --subject-01-status-bg-color: rgb(233, 151, 0);
+    --subject-01-status-stroke-color: rgb(97, 62, 26);
+
+    --subject-02-container-bg-color: rgb(122, 214, 103);
+    --subject-02-container-status-color: white;
+    --subject-02-container-shadow: 0 0 10px 3.5px rgba(10, 206, 36, 0.568);
+    --subject-02-id-color: rgb(0, 77, 0);
+    --subject-02-status-bg-color: rgb(2, 170, 11);
+    --subject-02-status-stroke-color: rgb(59, 90, 44);
+
+    --subject-title-new-animation: sub_new_light 0.8s infinite alternate;
+    --subject-requeriment-color: rgb(235, 12, 56);
+    --animation-redmark: mark_02_light 0.8s infinite alternate;
+    --dropdown-bg-color: rgb(158, 158, 158);
+    --dropdown-border: solid 1px rgb(100, 100, 100);
+    --dropdown-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.397);
+
+    --condition-button-no-border-color: rgb(187, 109, 124);
+    --condition-button-no-bg-color: rgba(236, 59, 35, 0.877);
+    --condition-button-no-color: rgb(27, 2, 7);
+    --condition-button-ok-border-color: rgb(110, 206, 110);
+    --condition-button-ok-bg-color: rgba(18, 231, 18, 0.651);
+    --condition-button-ok-color: rgb(4, 37, 4);
+
+    --barprogress-color: rgb(0, 210, 0);
+    --barprogress-bg-color: rgb(200, 200, 200);
+    --barprogress-barshadow: 0 0 6px 0.5px rgb(0, 210, 0);
+    --barprogress-text: rgb(20, 68, 20);
+    --barprogress-text-shadow: 1px 1px 4px rgb(140, 155, 140);
+    --barprogress-title: rgb(34, 34, 34);
+}
+
+
 /* General Styles */
 
 body {
@@ -6,13 +124,16 @@ body {
     flex-direction: column;
 
     justify-content: space-between;
-    background-color: black;
-    color: white;
-    min-height: 100vh; /* Usa la altura del viewport */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    /* Usa la altura del viewport */
     font-family: 'Dosis', sans-serif;
+    transition: 0.3s, color 0.3s;
 }
 
-html, body {
+html,
+body {
     height: 100vh;
 }
 
@@ -65,11 +186,31 @@ html, body {
     background-size: 90px;
     background-position: left;
     background-repeat: no-repeat;
+    margin-left: 20px;
     opacity: 0.4;
     filter: grayscale(20%);
-    width: 100%;
+    width: calc(100% - 20px);
     z-index: -1;
     height: 120px;
+}
+
+.toggle-btn {
+    position: absolute;
+    background-color: transparent;
+    background-image: var(--toggle-btn-img);
+    background-size: cover;
+    border: solid 1px rgb(126, 126, 126);
+    width: 35px;
+    height: 35px;
+    left: 5px;
+    top: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 2px 1px rgb(129, 129, 129);
+}
+
+.toggle-btn:hover {
+    transform: scale(1.1);
 }
 
 h1 {
@@ -78,20 +219,26 @@ h1 {
     font-weight: 600;
     font-size: 2rem;
     letter-spacing: 5px;
+    color: var(--title-color);
+    font-weight: 700;
 }
 
-.beta {
-    color:chartreuse; 
-    display: inline; 
-    font-size: 18px; 
+.version {
+    color: var(--version-color);
+    display: inline;
+    font-size: 18px;
     font-weight: 600;
 }
 
 .unne_logo {
-    position: absolute; 
-    width: 120px; 
-    right: 0; 
-    margin: 15px;
+    position: absolute;
+    background-image: var(--unne-logo);
+    background-size: 108px;
+    width: 108px;
+    height: 108px;
+    right: 0;
+    top: 0;
+    margin: 5px;
 }
 
 
@@ -125,13 +272,17 @@ main {
 }
 
 main::-webkit-scrollbar-corner {
-    background-color: black;
+    background-color: var(--background-color);
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: var(--main-scrollbar-color);
 }
 
 .year_column {
     display: flex;
     flex-direction: column;
-    border-left: dashed 2px rgb(37, 37, 37);
+    border-left: var(--linea-entrecortada);
 }
 
 .year_sub_column {
@@ -147,14 +298,14 @@ main::-webkit-scrollbar-corner {
 }
 
 .cuatrimestre_year_column {
-    border-top: solid 2px grey;
+    border-top: var(--linea-solida);
     font-weight: 600;
     font-size: 1.1rem;
 }
 
 .cuatrimestre_number_column {
-    border-top: solid 2px grey;
-    border-bottom: solid 2px grey;
+    border-top: var(--linea-solida);
+    border-bottom: var(--linea-solida);
     font-size: 1rem;
 }
 
@@ -170,31 +321,31 @@ main::-webkit-scrollbar-corner {
 .subject_container {
     display: flex;
     position: relative;
-    background-color: rgb(19, 19, 19);
+    background-color: var(--subject-container-background);
     justify-content: space-between;
     align-items: stretch;
     margin: 20px 20px 20px 20px;
     width: 260px;
     height: 60px;
     border-radius: 16px;
-    border: solid 1px black;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.486);
+    border: solid 1px var(--subject-container-border-color);
+    box-shadow: var(--subject-container-shadow);
 }
 
 .subject_onfocus {
-    border: solid 1px white;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.886);
+    border: solid 1px var(--text-color);
+    box-shadow: var(--subject-status00-onfocus-shadow);
 }
 
 .subject_container:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .subject_id {
     display: flex;
     font-family: 'Roboto', sans-serif;
     flex-direction: column;
-    background-color: black;
+    background-color: var(--background-color);
     border-radius: 15px 0 0 15px;
     flex-grow: 1;
     align-items: stretch;
@@ -215,8 +366,8 @@ main::-webkit-scrollbar-corner {
 .subject_status {
     display: flex;
     flex-direction: column;
-    font-family: 'Roboto', sans-serif;
-    background-color: black;
+    font-family: 'Tilt Warp', serif;
+    background-color: var(--background-color);
     border-radius: 15px;
     flex-grow: 1;
     align-items: center;
@@ -226,11 +377,11 @@ main::-webkit-scrollbar-corner {
 }
 
 .subject_id_01 {
-    color: orange;
+    color: var(--subject-01-id-color);
 }
 
 .subject_id_02 {
-    color: green;
+    color: var(--subject-02-id-color);
 }
 
 .subject_id_red_mark {
@@ -238,23 +389,22 @@ main::-webkit-scrollbar-corner {
 }
 
 .subject_status_01 {
-    background-color: rgb(202, 132, 2);
+    background-color: var(--subject-01-status-bg-color);
     font-weight: 800;
     font-size: 40px;
-    color: black;
-
+    color: var(--subject-01-container-status-color);
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgb(255 191 115);
+    -webkit-text-stroke-color: var(--subject-01-status-stroke-color);
 }
 
 .subject_status_02 {
-    background-color: rgb(1 81 5);
+    background-color: var(--subject-02-status-bg-color);
     font-weight: 800;
     font-size: 40px;
-    color: black;
+    color: var(--subject-02-container-status-color);
 
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgb(169 255 129);
+    -webkit-text-stroke-color: var(--subject-02-status-stroke-color);
 }
 
 .subject_status_img {
@@ -262,7 +412,7 @@ main::-webkit-scrollbar-corner {
 }
 
 .disabled {
-    filter: brightness(40%);
+    filter: var(--subject-disabled-img);
 }
 
 .subject_new {
@@ -272,20 +422,32 @@ main::-webkit-scrollbar-corner {
     bottom: 110%;
     margin-top: 5px;
     padding: 5px 2px 5px 2px;
-    color: white;
+    color: var(--text-color);
     min-width: 160px;
     width: 100%;
     letter-spacing: 2px;
     z-index: 1;
-    animation: sub_new 0.8s infinite alternate;
+    animation: var(--subject-title-new-animation);
 }
 
-@keyframes sub_new {
+@keyframes sub_new_dark {
     0% {
         text-shadow: 0px 0px 10px white;
     }
+
     100% {
         text-shadow: 0px 0px 2px white;
+    }
+}
+
+@keyframes sub_new_light {
+    0% {
+        text-shadow: 0px 0px 2px var(--footer-color);
+        font-weight: 200;
+    }
+
+    100% {
+        text-shadow: 0px 0px 2px var(--text-color);
     }
 }
 
@@ -296,7 +458,7 @@ main::-webkit-scrollbar-corner {
     bottom: 110%;
     margin-top: 5px;
     padding: 5px 2px 5px 2px;
-    color: crimson;
+    color: var(--subject-requeriment-color);
     min-width: 160px;
     width: 100%;
     z-index: 2;
@@ -307,6 +469,7 @@ main::-webkit-scrollbar-corner {
     0% {
         text-shadow: 0px 0px 10px red;
     }
+
     100% {
         text-shadow: 0px 0px 5px red;
     }
@@ -321,13 +484,14 @@ main::-webkit-scrollbar-corner {
     left: -2px;
     margin-top: 5px;
     padding: 5px 2px 5px 2px;
-    background-color: rgb(31, 31, 31);
-    color: white;
+    background-color: var(--dropdown-bg-color) ;
+    color: var(--text-color);
     min-width: 160px;
     width: 100%;
     border-radius: 5px;
+    border: var(--dropdown-border);
     z-index: 2;
-    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.397);
+    box-shadow: var(--dropdown-shadow);
 }
 
 .dropdown_2 {
@@ -354,7 +518,7 @@ button {
     border-radius: 5px;
 }
 
-.condition_buton_div {
+.condition_button_div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -364,32 +528,31 @@ button {
     white-space: nowrap;
 }
 
-.condition_buton {
+.condition_button {
     display: flex;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    margin: 2px;
     border-radius: 5px;
     width: 100%;
     height: 45px;
 }
 
 .condition_button_no {
-    border-color: rgb(58, 5, 15);
-    background-color: rgb(37, 3, 10);
-    color: crimson;
+    border-color: var(--condition-button-no-border-color);
+    background-color: var(--condition-button-no-bg-color);
+    color: var(--condition-button-no-color);
 }
 
 .condition_button_ok {
-    border-color: green;
-    background-color: rgb(0, 34, 0);
-    color: lightgreen;
+    border-color: var(--condition-button-ok-border-color);
+    background-color: var(--condition-button-ok-bg-color);
+    color: var(--condition-button-ok-color);
 }
 
 footer {
     display: flex;
-    background-color: rgb(12, 12, 12);
+    background-color: var(--footer-color);
     height: 50px;
     justify-content: center;
     align-items: center;
@@ -416,14 +579,14 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-    background-color: rgb(36, 36, 36);
+    background-color: var(--barprogress-bg-color);
     border-radius: 5px;
 }
 
 progress::-webkit-progress-value {
-    background-color: green;
+    background-color: var(--barprogress-color);
     border-radius: 5px 0 0 5px;
-    box-shadow: 0 0 6px 0.5px green;
+    box-shadow: var(--barprogress-barshadow);
 }
 
 .degree_img {
@@ -432,8 +595,8 @@ progress::-webkit-progress-value {
 }
 
 .degree_text {
-    color: greenyellow;
-    text-shadow: 1px 1px 4px green;
+    color: var(--barprogress-text);
+    text-shadow: var(--barprogress-text-shadow);
     width: 50px;
 }
 
@@ -441,7 +604,7 @@ progress::-webkit-progress-value {
     font-size: 14px;
     margin-right: 5px;
     margin-left: 30px;
-    color: lightgrey;
+    color: var(--barprogress-title);
 }
 
 /* Efecto de celebración */
@@ -477,10 +640,16 @@ progress::-webkit-progress-value {
         background-size: 400px;
         height: 90px;
     }
-    
+
     .summer-eff {
         background-size: 60px;
         height: 90px;
+    }
+
+    .toggle-btn {
+        width: 25px;
+        height: 25px;
+        left: 5px;
     }
 
     h1 {
@@ -505,18 +674,17 @@ progress::-webkit-progress-value {
         font-size: 12px;
     }
 
-    .beta { 
-        font-size: 8px; 
+    .version {
+        font-size: 8px;
         font-weight: 600;
         letter-spacing: normal;
     }
 
     .unne_logo {
-        position: absolute; 
-        width: 50px; 
-        right: 0; 
-        margin-top: 40px;
-        margin-right: 8px;
+        position: absolute;
+        background-size: 80px;
+        width: 80px;
+        height: 80px;
     }
 
     /* Main */
@@ -534,14 +702,12 @@ progress::-webkit-progress-value {
         width: 120px;
         height: 35px;
         border-radius: 9px;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.486);
     }
 
     .subject_id {
         display: flex;
         font-family: 'Roboto', sans-serif;
         flex-direction: column;
-        background-color: black;
         border-radius: 9px 0 0 9px;
         flex-grow: 1;
         align-items: stretch;
@@ -560,10 +726,6 @@ progress::-webkit-progress-value {
     }
 
     .subject_status {
-        display: flex;
-        flex-direction: column;
-        font-family: 'Roboto', sans-serif;
-        background-color: black;
         border-radius: 7px;
         flex-grow: 1;
         align-items: center;
@@ -577,27 +739,21 @@ progress::-webkit-progress-value {
     }
 
     .subject_status_01 {
-        background-color: rgb(202, 132, 2);
         font-weight: 600;
         font-size: 16px;
-        color: black;
-    
         -webkit-text-stroke-width: 0.8px;
     }
-    
+
     .subject_status_02 {
-        background-color: rgb(1 81 5);
         font-weight: 600;
         font-size: 16px;
     }
 
     .subject_new {
-        color: white;
         font-size: 8px;
         min-width: 120px;
         width: 100%;
         letter-spacing: 1px;
-        animation: sub_new 0.8s infinite alternate;
     }
 
     .subject_requeriment {
@@ -605,7 +761,6 @@ progress::-webkit-progress-value {
         font-size: 9px;
         min-width: 120px;
         width: 100%;
-        animation: sub_req 0.8s infinite alternate;
     }
 
     .dropdown {
@@ -617,7 +772,6 @@ progress::-webkit-progress-value {
         min-width: 140px;
         border-radius: 5px;
         z-index: 2;
-        box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.397);
     }
 
     .dropdown_2 {
@@ -646,7 +800,7 @@ progress::-webkit-progress-value {
         border-width: 1px;
     }
 
-    .condition_buton {
+    .condition_button {
         margin: 2px;
         height: 23px;
     }
@@ -663,7 +817,7 @@ progress::-webkit-progress-value {
     progress {
         border-radius: 2px;
     }
-    
+
     progress::-webkit-progress-bar {
         border-radius: 2px;
     }
@@ -698,31 +852,24 @@ progress::-webkit-progress-value {
     /* Footer */
 
     footer {
-        display: flex;
-        background-color: rgb(12, 12, 12);
         height: 40px;
-        justify-content: center;
-        align-items: center;
         font-size: 12px;
     }
 }
 
-@media (min-width: 460px) {
-     .unne_logo {
-        position: absolute;
-        width: 60px;
-        right: 0; 
-        margin-top: 20px;
-        margin-right: 4.5vw;
-    }
-}
-
-@media (min-width: 1100px) {
+@media (max-width: 460px) {
     .unne_logo {
-        width: 120px;
-        top: 8px; 
-        margin: 15px;
-        right: 2vw;
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+        margin-top: 35px;
+    }
+
+    .toggle-btn {
+        width: 20px;
+        height: 20px;
+        left: 5px;
+        top: 40px;
     }
 }
 
@@ -731,37 +878,23 @@ progress::-webkit-progress-value {
 
 .status_00 {
     border: 1px solid transparent;
-    background-color: rgb(17, 17, 17);
-    color: rgb(82, 82, 82);
+    background-color: var(--subject-container-disabled);
+    color: var(--subject-container-disabled-text);
     box-shadow: none;
-    /* animation: parpadeo 0.8s infinite alternate; */
+}
+
+.status_01 {
+    border: 1px solid rgb(168, 102, 8);
+    background-color: var(--subject-01-container-bg-color);
+    color: var(--text-color);
+    box-shadow: var(--subject-01-container-shadow);
 }
 
 .status_02 {
-    border: 1px solid rgb(211, 127, 9);
-    background-color: rgb(26, 15, 1);
-    color: white;
-    box-shadow: 0 0 3px 2px rgba(250, 167, 12, 0.2);
-}
-
-.status_02_2 {
-    border: 1px solid transparent;
-    background-color: rgb(209, 144, 22);
-    color: black;
-    box-shadow: none;
-}
-
-.status_03 {
     border: 1px solid rgb(3, 128, 3);
-    background-color: rgb(6, 27, 2);
-    color: white;
-    box-shadow: 0 0 3px 2px rgba(10, 206, 36, 0.2);
-}
-
-.status_03_3 {
-    border: 1px solid transparent;
-    background-color: rgb(54, 202, 24);
-    color: black;
+    background-color: var(--subject-02-container-bg-color);
+    color: var(--text-color);
+    box-shadow: var(--subject-02-container-shadow);
 }
 
 /* Marcadores de Materias */
@@ -773,25 +906,38 @@ progress::-webkit-progress-value {
 /* Animación de parpadeo */
 @keyframes mark_01 {
     0% {
-        border-color: rgb(190, 190, 190); /* Color inicial del borde */
+        border-color: rgb(190, 190, 190);
     }
+
     100% {
-        border-color: black; /* Color final del borde */  
+        border-color: black;
     }
 }
 
 .mark_02 {
-    animation: mark_02 0.8s infinite alternate;
+    animation: var(--animation-redmark);
     box-shadow: 0 0 3px 2px rgba(226, 32, 7, 0.5);
 }
 
-@keyframes mark_02 {
+@keyframes mark_02_dark {
     0% {
-        border-color: crimson; /* Color inicial del borde */
+        border-color: crimson;
         box-shadow: 0 0 5px 5px rgba(226, 32, 7, 0.5);
     }
+
     100% {
-        border-color: rgb(43, 6, 6); /* Color final del borde */
+        border-color: rgb(43, 6, 6)
+    }
+}
+
+@keyframes mark_02_light {
+    0% {
+        border-color: rgb(240, 35, 8);
+        box-shadow: 0 0 5px 5px rgba(226, 33, 7, 0.719);
+    }
+
+    100% {
+        border-color: rgb(43, 6, 6);
     }
 }
 

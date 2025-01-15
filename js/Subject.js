@@ -134,10 +134,7 @@ class Subject {
                                 <div class="subject_requeriment hidden">Requisito Necesario</div>
 
                                 <div class="dropdown hidden" id="subject_dropdown_` + this._id + `_0">
-                                    <p>No se puede cursar Materia, necesitas:</p>
-                                    <div>` +
-                                        this.view_conditions_1()
-                                    + `</div>
+
                                 </div>
                                 <div class="dropdown hidden" id="subject_dropdown_` + this._id + `_1">
                                     <p>Actualizar estado de Materia:</p>
@@ -192,7 +189,7 @@ class Subject {
             if (!dropdown_1.contains(event.target) && !subject.contains(event.target)) {
 
                 subject.classList.remove("mark_02");
-                // subject.classList.remove("subject_onfocus");
+                subject.classList.remove("subject_onfocus");
                 subject.querySelector(".subject_id").classList.remove("subject_id_red_mark");
                 subject.querySelector(".subject_requeriment").classList.add("hidden");
 
@@ -280,8 +277,8 @@ class Subject {
     
                 /* Actualizar el estado en la parte visual */
                 subject.classList.add("status_00");
+                subject.classList.remove("status_01");
                 subject.classList.remove("status_02");
-                subject.classList.remove("status_03");
 
             } else if ( !this.puede_aprobar() ) {
 
@@ -290,8 +287,8 @@ class Subject {
     
                 /* Actualizar el estado en la parte visual */
                 subject.classList.remove("status_00");
-                subject.classList.remove("status_02");
-                subject.classList.remove("status_03");                
+                subject.classList.remove("status_01");
+                subject.classList.remove("status_02");                
             }
         }
 
@@ -302,8 +299,8 @@ class Subject {
 
             /* Actualizar el estado en la parte visual */
             subject.classList.remove("status_00");
+            subject.classList.remove("status_01");
             subject.classList.remove("status_02");
-            subject.classList.remove("status_03");
 
             subject.querySelector(".subject_status").classList.remove("subject_status_01");
             subject.querySelector(".subject_status").classList.remove("subject_status_02");
@@ -328,14 +325,14 @@ class Subject {
 
             /* Actualizar el estado en la parte visual */
 
-            subject.classList.add("status_02");
+            subject.classList.add("status_01");
             subject.querySelector(".subject_status").classList.remove("subject_status_02");
             subject.querySelector(".subject_id").classList.remove("subject_id_02");
             subject.querySelector(".subject_status").classList.add("subject_status_01");
             subject.querySelector(".subject_status").innerHTML = "R";
             subject.querySelector(".subject_id").classList.add("subject_id_01");
 
-            subject.classList.remove("status_03");
+            subject.classList.remove("status_02");
 
             document.getElementById("button_" + this._id + "_0").disabled = false;
             document.getElementById("button_" + this._id + "_1").disabled = false;
@@ -353,10 +350,10 @@ class Subject {
 
             /* Actualizar el estado en la parte visual */
 
-            subject.classList.add("status_03");
-            subject.classList.remove("status_02");
+            subject.classList.add("status_02");
+            subject.classList.remove("status_01");
 
-            subject.classList.add("status_03");
+            subject.classList.add("status_02");
             subject.querySelector(".subject_status").classList.remove("subject_status_01");
             subject.querySelector(".subject_id").classList.remove("subject_id_01");
             subject.querySelector(".subject_status").classList.add("subject_status_02");
@@ -386,7 +383,7 @@ class Subject {
 
         subject.classList.remove("mark_01");
         subject.classList.remove("mark_02");
-        // subject.classList.add("subject_onfocus");
+        subject.classList.add("subject_onfocus");
         subject.querySelector(".subject_id").classList.remove("subject_id_red_mark");
         subject.querySelector(".subject_requeriment").classList.add("hidden");
         subject.querySelector(".subject_new").classList.add("hidden");
@@ -432,14 +429,14 @@ class Subject {
                     if(datos_materia[1] == 1 && subject._id == datos_materia[0]) {
                         if(subject._status < datos_materia[1]) {
                             conditions += 
-                            `<button class="condition_buton condition_button_no" disabled>`
+                            `<button class="condition_button condition_button_no" disabled>`
                                 + `<div style="flexgrow: 1">` + subject._id + `</div>`
                                 + `<div style="flexgrow: 4; flex-basis: 90%; padding: 0 3px 0 3px;">` + subject._nombre + `</div>`
                                 + `<div style="flexgrow: 1; width: 10%">` + `R` + `</div>`
                             + `</button>`;
                         } else {
                             conditions += 
-                            `<button class="condition_buton condition_button_ok" disabled>`
+                            `<button class="condition_button condition_button_ok" disabled>`
                                 + `<div style="flexgrow: 1">` + subject._id + `</div>`
                                 + `<div style="flexgrow: 4; flex-basis: 90%; padding: 0 3px 0 3px;">` + subject._nombre + `</div>`
                                 + `<div style="flexgrow: 1; width: 10%">` + `R` + `</div>`
@@ -449,14 +446,14 @@ class Subject {
                     if (datos_materia[1] == 2 && subject._id == datos_materia[0]) {
                         if(subject._status < datos_materia[1]) {
                             conditions += 
-                            `<button class="condition_buton condition_button_no" disabled>`
+                            `<button class="condition_button condition_button_no" disabled>`
                                 + `<div style="flexgrow: 1">` + subject._id + `</div>`
                                 + `<div style="flexgrow: 4; flex-basis: 90%; padding: 0 3px 0 3px;">` + subject._nombre + `</div>`
                                 + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
                             + `</button>`;
                         } else {
                             conditions += 
-                            `<button class="condition_buton condition_button_ok" disabled>`
+                            `<button class="condition_button condition_button_ok" disabled>`
                                 + `<div style="flexgrow: 1">` + subject._id + `</div>`
                                 + `<div style="flexgrow: 4; flex-basis: 90%; padding: 0 3px 0 3px;">` + subject._nombre + `</div>`
                                 + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
@@ -496,7 +493,7 @@ class Subject {
                 subjects.forEach(subject => {
                     if (datos_materia == subject._id && subject._status < 2) {
                         conditions += 
-                        `<button class="condition_buton condition_button_no" disabled>`
+                        `<button class="condition_button condition_button_no" disabled>`
                             + `<div style="flexgrow: 1">` + subject._id + `</div>`
                             + `<div style="flexgrow: 4; flex-basis: 90%; padding: 0 3px 0 3px;">` + subject._nombre + `</div>`
                             + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
@@ -504,7 +501,7 @@ class Subject {
                     }
                     if (datos_materia == subject._id && subject._status == 2) {
                         conditions += 
-                        `<button class="condition_buton condition_button_ok" disabled>`
+                        `<button class="condition_button condition_button_ok" disabled>`
                             + `<div style="flexgrow: 1">` + subject._id + `</div>`
                             + `<div style="flexgrow: 4; flex-basis: 90%; padding: 0 3px 0 3px;">` + subject._nombre + `</div>`
                             + `<div style="flexgrow: 1; width: 10%">` + `A` + `</div>`
@@ -581,7 +578,7 @@ class Subject {
             `<p>Requerimientos para CURSAR</p>
             <div style="margin-top: 8px;">` + this.view_conditions_1()+ `</div>
             <p style="margin: 10px 0 10px 0" >Requisitos para <br> Promocionar o Rendir Final</p>` +
-            `<div class="conditions-butons-div">` + this.view_conditions_2() + `</div>`;
+            `<div class="conditions-buttons-div">` + this.view_conditions_2() + `</div>`;
 
             if(this._conditions_02 != 0) {
                 let requeriments = document.getElementById("subject_dropdown_" + this._id + "_1_1");
