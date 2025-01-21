@@ -2,6 +2,7 @@
 :root:not([data-theme=light]) {
     --background-color: black;
     --unne-logo: url("../img/unne_white_logo.png");
+    --header-bg-color: ;
     --title-text-shadow: ;
     --title-color: ;
     --main-scrollbar-color: rgb(42, 42, 42);
@@ -55,12 +56,15 @@
     --barprogress-text: greenyellow;
     --barprogress-text-shadow: 1px 1px 4px green;
     --barprogress-title: lightgrey;
+
+    --filter-contrast: ;
 }
 
 [data-theme=light],
 :root:not([data-theme=dark]) {
     --background-color: rgb(225, 225, 225);
     --unne-logo: url("../img/unne_black_logo.png");
+    --header-bg-color: rgba(180, 180, 180, 0.8);
     --title-shadow: 0 0 2px rgb(70, 70, 70);
     --title-color: rgb(61, 61, 61);
     --main-scrollbar-color: rgb(180, 180, 180);
@@ -113,6 +117,8 @@
     --barprogress-text: rgb(20, 68, 20);
     --barprogress-text-shadow: 1px 1px 4px rgb(140, 155, 140);
     --barprogress-title: rgb(34, 34, 34);
+
+    --filter-contrast: invert(100%);
 }
 
 
@@ -150,6 +156,10 @@ body {
 }
 
 /* Header */
+
+header {
+    background-color: var(--header-bg-color);
+}
 
 /* Efecto de Primavera */
 
@@ -561,6 +571,7 @@ footer {
 .github_img {
     width: 1.2rem;
     background-image: url("../img/github.png");
+    filter: var(--filter-contrast);
 }
 
 .container_bar_progress {
