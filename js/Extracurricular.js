@@ -207,10 +207,10 @@ class Extracurricular extends Subject {
 
             /* Actualizar el estado en la parte visual */
 
-            subject.classList.add("status_03");
-            subject.classList.remove("status_02");
+            subject.classList.add("status_02");
+            subject.classList.remove("status_01");
 
-            subject.classList.add("status_03");
+            subject.classList.add("status_02");
             subject.querySelector(".subject_status").classList.remove("subject_status_01");
             subject.querySelector(".subject_id").classList.remove("subject_id_01");
             subject.querySelector(".subject_status").classList.add("subject_status_02");
@@ -218,6 +218,7 @@ class Extracurricular extends Subject {
             subject.querySelector(".subject_status").innerHTML = "A";
 
             document.getElementById("button_" + this._id + "_0").disabled = false;
+            document.getElementById("button_" + this._id + "_1").disabled = false;
             document.getElementById("button_" + this._id + "_2").disabled = false;
             document.getElementById("button_" + this._id + "_" + status).disabled = true;
 
