@@ -64,7 +64,7 @@
 :root:not([data-theme=dark]) {
     --background-color: rgb(225, 225, 225);
     --unne-logo: url("../img/unne_black_logo.png");
-    --header-bg-color: rgba(180, 180, 180, 0.8);
+    --header-bg-color: rgba(190, 190, 190, 0.253);
     --title-shadow: 0 0 2px rgb(70, 70, 70);
     --title-color: rgb(61, 61, 61);
     --main-scrollbar-color: rgb(180, 180, 180);
