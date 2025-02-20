@@ -626,6 +626,7 @@ progress::-webkit-progress-value {
     left: -20px;
     width: 300px;
     height: 100px;
+    opacity: 0.9;
 }
 
 /*

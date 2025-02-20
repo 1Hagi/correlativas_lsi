@@ -218,7 +218,6 @@ class Extracurricular extends Subject {
             subject.querySelector(".subject_status").innerHTML = "A";
 
             document.getElementById("button_" + this._id + "_0").disabled = false;
-            document.getElementById("button_" + this._id + "_1").disabled = false;
             document.getElementById("button_" + this._id + "_2").disabled = false;
             document.getElementById("button_" + this._id + "_" + status).disabled = true;
 
