@@ -298,7 +298,7 @@ main::-webkit-scrollbar-thumb {
 .year_sub_column {
     display: flex;
     flex-direction: row;
-    flex-basis: 90%;
+    flex-basis: 100%;
 }
 
 .cuatrimestre_column {
@@ -704,14 +704,19 @@ progress::-webkit-progress-value {
         touch-action: manipulation;
     }
 
+    main::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
     .cuatrimestre_number_column {
         font-size: 12px;
     }
 
     .subject_container {
-        margin: 20px 10px 20px 10px;
-        width: 120px;
-        height: 35px;
+        margin: auto 10px auto 10px;
+        width: 140px;
+        height: 32px;
         border-radius: 9px;
     }
 
@@ -778,7 +783,6 @@ progress::-webkit-progress-value {
         margin-top: 5px;
         padding: 5px 2px 5px 2px;
         font-size: 10px;
-        left: -12px;
         width: 140px;
         min-width: 140px;
         border-radius: 5px;
