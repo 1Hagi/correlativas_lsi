@@ -16,17 +16,30 @@ document.addEventListener('click', (event) => {
     analista_progress = 0;
     licenciado_progress = 0;
 
-    subjects.forEach(subject => {
-        if(subject._id < 401) {
-            analista_progress += subject._status;
-        }
-        licenciado_progress += subject._status;
-    });
+    if (window.location.href.includes("plan_estudio_nuevo.html")) {
+        subjects.forEach(subject => {
+            if(subject._id < 18) {
+                analista_progress += subject._status;
+            }
+            licenciado_progress += subject._status;
+        });
+    }   
+
+    if (window.location.href.includes("plan_estudio_viejo.html")) {
+        subjects.forEach(subject => {
+            if(subject._id < 401) {
+                analista_progress += subject._status;
+            }
+            licenciado_progress += subject._status;
+        });
+    }
 
     analistaProgressBar.value = analista_progress;
     licenciadoProgressBar.value = licenciado_progress;
+
     analistaPorcentaje.innerHTML = (analista_progress * 100 / 36).toFixed(1) + " %";
     licenciadoPorcentaje.innerHTML = (licenciado_progress * 100 / 58).toFixed(1) + " %";
+
 })
 
 // Interacción con el scroll vertical y horizontal al usar el ratón.
