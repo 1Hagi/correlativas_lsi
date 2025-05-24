@@ -22,7 +22,7 @@
     <!-- Scripts -->
     <script defer src="./js/Subject.js"></script>
     <script defer src="./js/Extracurricular.js"></script>
-    <script defer src="./js/onload.js"></script>
+    <script defer src="./js/theme.js"></script>
 
     <!-- Estilos CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
@@ -45,215 +45,32 @@
 
     <header>
 
-        <!-- <div class="summer-eff"></div> -->
+        <div class="autumn-eff"></div>
  
-        <button id="themeButton" class="toggle-btn" onclick="toggleTheme()"></button>
-
+        <button id="themeButton" class="toggle-btn" onclick="volver()"></button>
+        
         <div class="unne_logo"></div>
         <h1>
-            LICENCIATURA EN SISTEMAS 
-            <p class="version" style="text-shadow: var(--title-shadow);">(v1.6)</p>
+            LIC. EN SISTEMAS - Correlativas 
+            <p class="version" style="text-shadow: var(--title-shadow);">(v1.7)</p>
         </h1>
 
-        <h2>Correlativas</h2>
+        <h2>Selecciona Plan de Estudios</h2>
 
-        <h3>Selecciona materias y actualiza ( Basado en el Plan de Estudio )</h3>
+        <h3>Si sos ingresante del ciclo lectivo 2025 debes seleccionar el nuevo.</h3>
         
     </header>
 
     <main>
-
-        <div class="year_column">
-
-            <div class="cuatrimestre_year_column">Año 1</div>
-
-            <div class="year_sub_column">
-
-                <div class="cuatrimestre_column">
-                    
-                    <div class="cuatrimestre_number_column">
-                        1º Cuatrimestre
-                    </div>
-
-                    <div class="subject_column" id="subject_column_1_1">
-
-
-                    </div>
-
-                </div>
-
-                <div class="cuatrimestre_column">
-
-                    <div class="cuatrimestre_number_column">
-                        <div>2º Cuatrimestre</div>
-                    </div>
-
-                    <div class="subject_column" id="subject_column_1_2">
-                        
-                    </div>
-            
-                </div>
-                
-            </div>
-
+        <div class="planes_container">
+            <a class="plan_estudio" href="./plan_estudio_nuevo.html">
+                <p>Plan de Estudio <u>Nuevo</u></p>
+            </a>
+            <a class="plan_estudio" href="./plan_estudio_viejo.html">
+                <p>Plan de Estudio <u>Viejo</u></p>
+            </a>
         </div>
-
-        <div class="year_column">
-
-            <div class="cuatrimestre_year_column">Año 2</div>
-
-            <div class="year_sub_column">
-
-                <div class="cuatrimestre_column">
-                    
-                    <div class="cuatrimestre_number_column">
-                        1º Cuatrimestre
-                    </div>
-
-                    <div class="subject_column" id="subject_column_2_1">
-
-
-                    </div>
-
-                </div>
-
-                <div class="cuatrimestre_column">
-
-                    <div class="cuatrimestre_number_column">
-                        <div>2º Cuatrimestre</div>
-                    </div>
-
-                    <div class="subject_column" id="subject_column_2_2">
-
-                        
-                    </div>
-            
-                </div>
-                
-            </div>
-
-        </div>
-
-        <div class="year_column">
-
-            <div class="cuatrimestre_year_column">Año 3</div>
-
-            <div class="year_sub_column">
-
-                <div class="cuatrimestre_column">
-                    
-                    <div class="cuatrimestre_number_column">
-                        1º Cuatrimestre
-                    </div>
-
-                    <div class="subject_column" id="subject_column_3_1">
-
-
-                    </div>
-
-                </div>
-
-                <div class="cuatrimestre_column">
-
-                    <div class="cuatrimestre_number_column">
-                        <div>2º Cuatrimestre</div>
-                    </div>
-
-                    <div class="subject_column" id="subject_column_3_2">
-
-                        
-                    </div>
-            
-                </div>
-                
-            </div>
-
-        </div>
-
-        <div class="year_column">
-
-            <div class="cuatrimestre_year_column">Año 4</div>
-
-            <div class="year_sub_column">
-
-                <div class="cuatrimestre_column">
-                    
-                    <div class="cuatrimestre_number_column">
-                        1º Cuatrimestre
-                    </div>
-
-                    <div class="subject_column" id="subject_column_4_1">
-
-
-                    </div>
-
-                </div>
-
-                <div class="cuatrimestre_column">
-
-                    <div class="cuatrimestre_number_column">
-                        <div>2º Cuatrimestre</div>
-                    </div>
-
-                    <div class="subject_column" id="subject_column_4_2">
-
-                        
-                    </div>
-            
-                </div>
-                
-            </div>
-
-        </div>
-
-        <div class="year_column">
-
-            <div class="cuatrimestre_year_column">Año 5</div>
-
-            <div class="year_sub_column">
-
-                <div class="cuatrimestre_column">
-                    
-                    <div class="cuatrimestre_number_column">
-                        1º Cuatrimestre
-                    </div>
-
-                    <div class="subject_column" id="subject_column_5_1">
-
-
-                    </div>
-
-                </div>
-
-                <div class="cuatrimestre_column">
-
-                    <div class="cuatrimestre_number_column">
-                        <div>2º Cuatrimestre</div>
-                    </div>
-
-                    <div class="subject_column" id="subject_column_5_2">
-
-
-                    </div>
-            
-                </div>
-                
-            </div>
-
-        </div>
-
     </main>
-
-    <div class="container_bar_progress">
-        <p class="bar_tittle">Analista Programador/a</p>
-        <img class="degree_img" src="./img/degree.png" alt="analista_degree">
-        <progress id="analista_degree" max="36" value="0"></progress>
-        <p id="analista_degree_text" class="degree_text" >0.0 %</p>
-        <p class="bar_tittle">Licenciado/a en Sistemas</p>
-        <img class="degree_img" style="filter: hue-rotate(190deg)" src="./img/degree.png" alt="licenciado_degree">
-        <progress id="licenciado_degree" max="58" value="0"></progress>
-        <p id="licenciado_degree_text" class="degree_text" >0.0 %</p>
-    </div>
 
     <footer>
         <p>© 2024 Todos los derechos reservados - Diego N. Cabrera</p>

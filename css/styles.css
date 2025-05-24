@@ -143,6 +143,11 @@ body {
     height: 100vh;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Estilo del scroll */
 /* Para navegadores WebKit (Chrome, Safari) */
 ::-webkit-scrollbar {
@@ -161,7 +166,7 @@ header {
     background-color: var(--header-bg-color);
 }
 
-/* Efecto de Primavera */
+/* Efectos de temporada */
 
 .spring-eff {
     position: absolute;
@@ -204,6 +209,41 @@ header {
     height: 120px;
 }
 
+.autumn-eff {
+    position: absolute;
+    background-image: url("../img/autumn-eff.gif");
+    background-size: 120px;
+    background-repeat: repeat;
+    margin-left: 20px;
+    opacity: 0.4;
+    filter: grayscale(20%);
+    width: calc(100% - 20px);
+    z-index: -1;
+    height: 120px;    
+}
+
+.volver-btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background-color: rgba(128, 128, 128, 0.5);
+    background-size: cover;
+    border: solid 1px rgb(126, 126, 126);
+    width: 35px;
+    height: 35px;
+    left: 5px;
+    top: 5px;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 2px 1px rgb(129, 129, 129);
+    color: var(--text-color);
+    font-size: 20px;
+    line-height: 1;
+    vertical-align: middle;
+}
+
 .toggle-btn {
     position: absolute;
     background-color: transparent;
@@ -213,13 +253,13 @@ header {
     width: 35px;
     height: 35px;
     left: 5px;
-    top: 5px;
+    top: 45px;
     cursor: pointer;
     transition: transform 0.2s ease;
     box-shadow: 0 0 2px 1px rgb(129, 129, 129);
 }
 
-.toggle-btn:hover {
+.toggle-btn:hover, .volver-btn:hover {
     transform: scale(1.1);
 }
 
@@ -287,6 +327,37 @@ main::-webkit-scrollbar-corner {
 
 main::-webkit-scrollbar-thumb {
     background-color: var(--main-scrollbar-color);
+}
+
+.planes_container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.plan_estudio {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--subject-container-background);
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px 20px 20px;
+    width: 30%;
+    height: 30%;
+    border-radius: 16px;
+    border: solid 1px var(--subject-container-border-color);
+    box-shadow: var(--subject-container-shadow);
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.plan_estudio:hover {
+    transform: scale(1.2);
+    transition: 0.3s, color 0.3s;
+    box-shadow: 0 0 20px var(--subject-02-status-stroke-color);
 }
 
 .year_column {
@@ -657,7 +728,18 @@ progress::-webkit-progress-value {
         height: 90px;
     }
 
+    .autumn-eff {
+        background-size: 90px;
+        height: 90px;
+    }
+
     .toggle-btn {
+        width: 25px;
+        height: 25px;
+        left: 5px;
+    }
+    
+    .volver-btn {
         width: 25px;
         height: 25px;
         left: 5px;
@@ -707,6 +789,16 @@ progress::-webkit-progress-value {
     main::-webkit-scrollbar {
         width: 5px;
         height: 5px;
+    }
+
+    .planes_container {
+        flex-direction: column;
+    }
+
+    .plan_estudio {
+        width: 80%;
+        height: 120px;
+        font-size: 30px;
     }
 
     .cuatrimestre_number_column {
