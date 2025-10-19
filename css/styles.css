@@ -181,6 +181,20 @@ header {
     height: 120px;
 }
 
+.spring-eff-2 {
+    position: absolute;
+    background-image: url("../img/spring-eff.gif");
+    background-repeat: repeat;
+    background-size: 450px;
+    background-position: top;
+    background-repeat: repeat;
+    opacity: 0.4;
+    filter: grayscale(20%);
+    width: 100%;
+    z-index: -1;
+    height: 120px;
+}
+
 .festival-eff {
     position: absolute;
     background-image: url("../img/little_stars_festival.gif");
@@ -257,6 +271,7 @@ header {
     cursor: pointer;
     transition: transform 0.2s ease;
     box-shadow: 0 0 2px 1px rgb(129, 129, 129);
+    z-index: 2;
 }
 
 .toggle-btn:hover, .volver-btn:hover {
