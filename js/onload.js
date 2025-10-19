@@ -133,7 +133,3 @@ document.addEventListener("click", (e) => {
         globalDragging = false; // Reiniciamos la bandera global
     }
 });
-
-function volver() {
-    window.location.href = "./index.html";
-}
