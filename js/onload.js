@@ -25,7 +25,7 @@ document.addEventListener('click', (event) => {
         });
     }   
 
-    if (window.location.href.includes("plan_estudio_viejo.html")) {
+    if (window.location.href.includes("plan_estudio_anterior.html")) {
         subjects.forEach(subject => {
             if(subject._id < 401) {
                 analista_progress += subject._status;
