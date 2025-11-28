@@ -124,6 +124,9 @@ class Subject {
         // Crear los elementos HTML de cada materia
         let yourself = `
                             <div class="subject_container ` + ((this._conditions_01 == 0) ? 'mark_01' : 'status_00' ) + `" id="subject_` + this._id + `" onclick="subject_` + this._id + `.viewDetails()">
+
+                                    <div class="btn-style510"></div>
+
                                 <div class="subject_id">` + this._id + `</div>
                                 <p class="subject_name">` + this._nombre + `</p>
                                 <div class="subject_status">

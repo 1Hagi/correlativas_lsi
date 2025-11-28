@@ -16,7 +16,7 @@
     --subject-container-border-color: black;
     --subject-container-shadow: 0 0 10px rgba(255, 255, 255, 0.486);
     --subject-container-disabled: rgb(17, 17, 17);
-    --subject-container-disabled-text: rgb(82, 82, 82);
+    --subject-container-disabled-text: rgb(112, 112, 112);
     --subject-disabled-img: brightness(40%);
 
     --subject-status00-onfocus-shadow: 0 0 20px rgba(255, 255, 255, 0.886);
@@ -58,6 +58,8 @@
     --barprogress-title: lightgrey;
 
     --filter-contrast: ;
+    --bg-year-column: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgb(0, 10, 12) 25%, rgba(0, 0, 0, 1) 50%, rgb(0, 10, 12) 75%, rgba(0, 0, 0, 1) 100%);
+    --border-color-hover: rgba(255, 255, 255, 0.397);
 }
 
 [data-theme=light],
@@ -78,7 +80,7 @@
     --subject-container-border-color: white;
     --subject-container-shadow: 0 0 10px 3.5px rgba(0, 0, 0, 0.486);
     --subject-container-disabled: rgb(204, 204, 204);
-    --subject-container-disabled-text: rgb(94, 94, 94);
+    --subject-container-disabled-text: rgb(85, 85, 85);
     --subject-disabled-img: grayscale(200%);
 
     --subject-status00-onfocus-shadow: 0 0 10px 1px rgb(22, 22, 22);
@@ -119,6 +121,8 @@
     --barprogress-title: rgb(34, 34, 34);
 
     --filter-contrast: invert(100%);
+    --bg-year-column: linear-gradient(90deg,rgb(223, 223, 223) 0%, rgb(209, 220, 224) 25%, rgb(223, 223, 223) 50%, rgb(209, 220, 224) 75%, rgb(223, 223, 223) 100%);
+    --border-color-hover: rgba(0, 0, 0, 0.397);
 }
 
 
@@ -191,7 +195,7 @@ a {
     width: 500px;
     height: 100%;
     background-color: var(--background-color);
-    z-index: 1;
+    z-index: 2;
     border-right: solid 1px var(--subject-container-disabled-text);
     overflow-x: hidden;
     overflow-y: scroll;
@@ -205,6 +209,8 @@ a {
 /* Header */
 
 header {
+    display: flex;
+    flex-direction: column;
     background-color: var(--header-bg-color);
 }
 
@@ -400,7 +406,7 @@ main::-webkit-scrollbar-thumb {
   content: "";
   position: absolute;
   inset: 0; /* top:0; right:0; bottom:0; left:0 */
-  background-image: url("../img/bg_study.png");
+  background-image: url("../img/bg_study.jpg");
   background-size: cover;
   background-position: center;
   filter: blur(5px) brightness(0.8) opacity(0.4);
@@ -440,6 +446,7 @@ main::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: row;
     flex-basis: 100%;
+    background: var(--bg-year-column);
 }
 
 .cuatrimestre_column {
@@ -1204,4 +1211,66 @@ progress::-webkit-progress-value {
   to {
     transform: translateY(-2000px);
   }
+}
+
+/* Animación de Fade Up */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo de Botones */
+
+.btn-style510 {
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+	overflow: hidden;
+    border-radius: 16px;
+}
+
+.btn-style510::before, .btn-style510::after {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateX(-100px) skewX(-15deg);
+	content: "";
+}
+
+.btn-style510::before {
+	width: 60px;
+	background: rgba(255, 255, 255, 0.5);
+	filter: blur(30px);
+	opacity: 0.5;
+}
+
+.btn-style510::after {
+	width: 30px;
+	left: 30px;
+	background: rgba(255, 255, 255, 0.2);
+	filter: blur(5px);
+}
+
+.btn-style510:hover {
+	border-color: var(--border-color-hover);
+}
+
+.btn-style510:hover::before {
+  	opacity: 1;
+}
+
+.btn-style510:hover::before, .btn-style510:hover::after {
+	transform: translateX(300px) skewX(-15deg);
+	transition: all 0.9s ease;
 }
