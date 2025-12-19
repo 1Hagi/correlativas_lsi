@@ -153,6 +153,8 @@ class Extracurricular extends Subject {
 
 
         /* La siguiente estructura condicional comprueba si el estado actual es válido y si no lo es, lo cambia */
+
+        /*comentario*/
         if(status == undefined) {
             if( !this.puede_cursar() ) {
 
