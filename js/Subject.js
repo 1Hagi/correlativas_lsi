@@ -88,7 +88,7 @@ class Subject {
 
     puede_aprobar() {
 
-        /* Éste método revisa su existe alguna materia que no cumpla los requisitos para APROBAR */
+        /* Éste método revisa si existe alguna materia que no cumpla los requisitos para APROBAR */
         /* Devuelve TRUE si puede cursar, caso contrario devuelve FALSE */
 
         let value = true;
@@ -267,7 +267,8 @@ class Subject {
     update(status) {
         
         let subject = document.getElementById("subject_" + this._id);
-
+        const estadoAnterior = this._status;
+        //const estadoAnterior = this._status;
 
         /* La siguiente estructura condicional comprueba si el estado actual es válido y si no lo es, lo cambia */
         if(status == undefined) {
@@ -365,12 +366,18 @@ class Subject {
             document.getElementById("button_" + this._id + "_1").disabled = false;
             document.getElementById("button_" + this._id + "_2").disabled = false;
             document.getElementById("button_" + this._id + "_" + status).disabled = true;
-
+            /*Esta condicion evita que el efecto del confetti se quede en bucle cada vez que se actualiza la pagina*/
+            if (estadoAnterior !== 2) {
             this.crearEfectoFestejo(subject);
+            }
 
             /* Llamar a los demás objetos que actualicen su estado visual */
 
         }
+    /*Aqui se llama a la funcion para que cada vez que se actualiza un status 
+    de una materia se guarde en el local storage*/
+    guardarEstadoMaterias(subjects);
+
     }
 
     viewDetails() {
@@ -519,7 +526,7 @@ class Subject {
 
         let subject = document.getElementById("subject_" + this._id);
 
-        if( !this.puede_cursar ) {
+        if( !this.puede_cursar() ) {
     
             /* Actualizar el estado en la parte visual */
             subject.classList.add("status_00");
@@ -598,6 +605,7 @@ class Subject {
     }
 
     crearEfectoFestejo(subject) {
+        
         // Crear el elemento <img>
         const celeb = document.createElement("img");
         celeb.src = "./img/effect-celebration.gif";
