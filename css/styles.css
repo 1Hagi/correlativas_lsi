@@ -303,7 +303,7 @@ header {
     vertical-align: middle;
 }
 .reset-btn {
-        position: relative;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;  
@@ -842,7 +842,10 @@ progress::-webkit-progress-value {
         width: 30px;
         height: 30px;
     }
-
+    .reset-btn {
+        width: 30px;
+        height: 30px;
+    }
     .show-info {
         width: 30px;
         height: 30px;

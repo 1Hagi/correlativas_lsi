@@ -1,9 +1,15 @@
 // Cargar las materias y cargar los estados guardados en local storage
 
+
 load_subjects();
 cargarEstadoMaterias(subjects);
+// el agregado del skipEffect permitio solucionar el problema al marcar varias materias como regular
 subjects.forEach(subject => {
-    subject.update(); // sin parámetro => valida reglas
+    subject.update(undefined, { skipEffects: true }); // sin parámetro => valida reglas
+});
+/*Soluciona un error que cuando actualizas no se veia las materias desbloqueadas cuando aprobas o regularizas otra*/
+subjects.forEach(subject => {
+    subject.sincronizarVista();
 });
 
 // Barras de Progreso

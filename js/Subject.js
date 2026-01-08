@@ -264,8 +264,60 @@ class Subject {
 
     }
 
-    update(status) {
+//Sincroniza las materias que se desbloquean al aprobar otra materia para que se mantenga al actualizar la pagina
+    sincronizarVista() {
+    const subject = document.getElementById("subject_" + this._id);
+
+    subject.classList.remove(
+        "status_00", "status_01", "status_02",
+        "mark_01", "mark_02"
+    );
+    subject.querySelector(".subject_new")?.classList.add("hidden");
+    subject.querySelector(".subject_requeriment")?.classList.add("hidden");
+    subject.querySelector(".subject_status_img")?.classList.remove("disabled");
+
+    subject.classList.add(`status_0${this._status}`);
+
+
+    if (this._status === 0) {
+        if (this.puede_cursar()) {
+            subject.classList.add("mark_01");
+            subject.classList.remove("status_00");
+
+            if (this._conditions_01 !== 0) {
+                subject.querySelector(".subject_new")?.classList.remove("hidden");
+            }
+        } else {
+            subject.classList.add("status_00");
+            subject.querySelector(".subject_status_img")?.classList.add("disabled");
+        }
+    }
+}
+//evita el error al marcar varias materias com or regulares
+actualizarVistaDesdeEstado() {
+    const subject = document.getElementById("subject_" + this._id);
+
+    subject.classList.remove("status_00", "status_01", "status_02");
+
+    if (this._status === 0) {
+        subject.classList.add("status_00");
+    }
+    if (this._status === 1) {
+        subject.classList.add("status_01");
+    }
+    if (this._status === 2) {
+        subject.classList.add("status_02");
+    }
+}
+
+    update(status = undefined, options = {}) {
         
+        if (options.skipEffects === true) {
+        this.actualizarVistaDesdeEstado();
+        return;
+    }
+
+
         let subject = document.getElementById("subject_" + this._id);
         const estadoAnterior = this._status;
         //const estadoAnterior = this._status;
@@ -281,6 +333,7 @@ class Subject {
                 subject.classList.add("status_00");
                 subject.classList.remove("status_01");
                 subject.classList.remove("status_02");
+            
 
             } else if ( !this.puede_aprobar() ) {
 
@@ -367,7 +420,7 @@ class Subject {
             document.getElementById("button_" + this._id + "_2").disabled = false;
             document.getElementById("button_" + this._id + "_" + status).disabled = true;
             /*Esta condicion evita que el efecto del confetti se quede en bucle cada vez que se actualiza la pagina*/
-            if (estadoAnterior !== 2) {
+            if (estadoAnterior !== 2 && !options.skipEffects) {
             this.crearEfectoFestejo(subject);
             }
 
