@@ -1,12 +1,12 @@
 [data-theme=dark],
 :root:not([data-theme=light]) {
-    --background-color: black;
+    --background-color: rgb(0, 0, 0);
     --unne-logo: url("../img/unne_white_logo.png");
     --header-bg-color: ;
     --title-text-shadow: ;
     --title-color: ;
     --main-scrollbar-color: rgb(42, 42, 42);
-    --text-color: white;
+    --text-color: rgb(255, 255, 255);
     --footer-color: rgb(12, 12, 12);
     --version-color: chartreuse;
     --toggle-btn-img: url("../img/sun.png");
@@ -302,6 +302,24 @@ header {
     color: var(--text-color);
     vertical-align: middle;
 }
+.reset-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background-color: rgba(128, 128, 128, 0.5);
+    background-size: cover;
+    border: solid 2px rgb(39, 43, 51);
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 2px 1px rgb(0, 117, 196);
+    border-radius: 5px;
+    color: var(--text-color);
+    vertical-align: middle;
+}
 
 .toggle-btn {
     position: relative;
@@ -317,7 +335,7 @@ header {
     border-radius: 5px;
 }
 
-.toggle-btn:hover, .volver-btn:hover {
+.toggle-btn:hover, .volver-btn:hover, .reset-btn:hover {
     transform: scale(1.1);
 }
 
@@ -327,7 +345,7 @@ h1 {
     font-weight: 600;
     font-size: 2rem;
     letter-spacing: 5px;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: 700;
     text-shadow: 0 0 5px grey;
 }
@@ -824,7 +842,10 @@ progress::-webkit-progress-value {
         width: 30px;
         height: 30px;
     }
-
+    .reset-btn {
+        width: 30px;
+        height: 30px;
+    }
     .show-info {
         width: 30px;
         height: 30px;

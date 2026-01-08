@@ -88,7 +88,7 @@ class Subject {
 
     puede_aprobar() {
 
-        /* Éste método revisa su existe alguna materia que no cumpla los requisitos para APROBAR */
+        /* Éste método revisa si existe alguna materia que no cumpla los requisitos para APROBAR */
         /* Devuelve TRUE si puede cursar, caso contrario devuelve FALSE */
 
         let value = true;
@@ -264,10 +264,63 @@ class Subject {
 
     }
 
-    update(status) {
-        
-        let subject = document.getElementById("subject_" + this._id);
+//Sincroniza las materias que se desbloquean al aprobar otra materia para que se mantenga al actualizar la pagina
+    sincronizarVista() {
+    const subject = document.getElementById("subject_" + this._id);
 
+    subject.classList.remove(
+        "status_00", "status_01", "status_02",
+        "mark_01", "mark_02"
+    );
+    subject.querySelector(".subject_new")?.classList.add("hidden");
+    subject.querySelector(".subject_requeriment")?.classList.add("hidden");
+    subject.querySelector(".subject_status_img")?.classList.remove("disabled");
+
+    subject.classList.add(`status_0${this._status}`);
+
+
+    if (this._status === 0) {
+        if (this.puede_cursar()) {
+            subject.classList.add("mark_01");
+            subject.classList.remove("status_00");
+
+            if (this._conditions_01 !== 0) {
+                subject.querySelector(".subject_new")?.classList.remove("hidden");
+            }
+        } else {
+            subject.classList.add("status_00");
+            subject.querySelector(".subject_status_img")?.classList.add("disabled");
+        }
+    }
+}
+//evita el error al marcar varias materias com or regulares
+actualizarVistaDesdeEstado() {
+    const subject = document.getElementById("subject_" + this._id);
+
+    subject.classList.remove("status_00", "status_01", "status_02");
+
+    if (this._status === 0) {
+        subject.classList.add("status_00");
+    }
+    if (this._status === 1) {
+        subject.classList.add("status_01");
+    }
+    if (this._status === 2) {
+        subject.classList.add("status_02");
+    }
+}
+
+    update(status = undefined, options = {}) {
+        
+        if (options.skipEffects === true) {
+        this.actualizarVistaDesdeEstado();
+        return;
+    }
+
+
+        let subject = document.getElementById("subject_" + this._id);
+        const estadoAnterior = this._status;
+        //const estadoAnterior = this._status;
 
         /* La siguiente estructura condicional comprueba si el estado actual es válido y si no lo es, lo cambia */
         if(status == undefined) {
@@ -280,6 +333,7 @@ class Subject {
                 subject.classList.add("status_00");
                 subject.classList.remove("status_01");
                 subject.classList.remove("status_02");
+            
 
             } else if ( !this.puede_aprobar() ) {
 
@@ -365,12 +419,18 @@ class Subject {
             document.getElementById("button_" + this._id + "_1").disabled = false;
             document.getElementById("button_" + this._id + "_2").disabled = false;
             document.getElementById("button_" + this._id + "_" + status).disabled = true;
-
+            /*Esta condicion evita que el efecto del confetti se quede en bucle cada vez que se actualiza la pagina*/
+            if (estadoAnterior !== 2 && !options.skipEffects) {
             this.crearEfectoFestejo(subject);
+            }
 
             /* Llamar a los demás objetos que actualicen su estado visual */
 
         }
+    /*Aqui se llama a la funcion para que cada vez que se actualiza un status 
+    de una materia se guarde en el local storage*/
+    guardarEstadoMaterias(subjects);
+
     }
 
     viewDetails() {
@@ -519,7 +579,7 @@ class Subject {
 
         let subject = document.getElementById("subject_" + this._id);
 
-        if( !this.puede_cursar ) {
+        if( !this.puede_cursar() ) {
     
             /* Actualizar el estado en la parte visual */
             subject.classList.add("status_00");
@@ -598,6 +658,7 @@ class Subject {
     }
 
     crearEfectoFestejo(subject) {
+        
         // Crear el elemento <img>
         const celeb = document.createElement("img");
         celeb.src = "./img/effect-celebration.gif";

@@ -1,6 +1,6 @@
 class Extracurricular extends Subject {
     constructor(id, nombre, ubication, conditions_01, conditions_02, status) {
-      super(id, nombre, ubication, conditions_01, conditions_02, status);
+    super(id, nombre, ubication, conditions_01, conditions_02, status);
     }
 
     create() {
@@ -150,7 +150,7 @@ class Extracurricular extends Subject {
     update(status) {
         
         let subject = document.getElementById("subject_" + this._id);
-
+        const estadoAnterior = this._status;
 
         /* La siguiente estructura condicional comprueba si el estado actual es válido y si no lo es, lo cambia */
         if(status == undefined) {
@@ -221,12 +221,18 @@ class Extracurricular extends Subject {
             document.getElementById("button_" + this._id + "_0").disabled = false;
             document.getElementById("button_" + this._id + "_2").disabled = false;
             document.getElementById("button_" + this._id + "_" + status).disabled = true;
-
+/*Esta condicion evita que el efecto del confetti se quede en bucle cada vez que se actualiza la pagina*/
+            if (estadoAnterior !== 2) {
             this.crearEfectoFestejo(subject);
+            }
 
             /* Llamar a los demás objetos que actualicen su estado visual */
 
         }
+        /*Aqui se llama a la funcion para que cada vez que se actualiza un status 
+        de una materia se guarde en el local storage*/
+        guardarEstadoMaterias(subjects);
+        
     }
     
     crearEfectoFestejo(subject) {

@@ -1,6 +1,16 @@
-// Cargar las materias
+// Cargar las materias y cargar los estados guardados en local storage
+
 
 load_subjects();
+cargarEstadoMaterias(subjects);
+// el agregado del skipEffect permitio solucionar el problema al marcar varias materias como regular
+subjects.forEach(subject => {
+    subject.update(undefined, { skipEffects: true }); // sin parámetro => valida reglas
+});
+/*Soluciona un error que cuando actualizas no se veia las materias desbloqueadas cuando aprobas o regularizas otra*/
+subjects.forEach(subject => {
+    subject.sincronizarVista();
+});
 
 // Barras de Progreso
 
@@ -10,9 +20,14 @@ const analistaPorcentaje = document.getElementById('analista_degree_text');
 const licenciadoPorcentaje = document.getElementById('licenciado_degree_text');
 let analista_progress = 0;
 let licenciado_progress = 0;
+actualiarProgreso();
 
 document.addEventListener('click', (event) => {
-
+actualiarProgreso();
+});
+/* el evento del click para las barras de progreso se convirtio en una funcion para reutilizar para que funcione
+correctamente al mismo tiempo que se actualiza un status de una materia*/
+function actualiarProgreso(){
     analista_progress = 0;
     licenciado_progress = 0;
 
@@ -40,7 +55,8 @@ document.addEventListener('click', (event) => {
     analistaPorcentaje.innerHTML = (analista_progress * 100 / 36).toFixed(1) + " %";
     licenciadoPorcentaje.innerHTML = (licenciado_progress * 100 / 58).toFixed(1) + " %";
 
-})
+
+}
 
 // Interacción con el scroll vertical y horizontal al usar el ratón.
 

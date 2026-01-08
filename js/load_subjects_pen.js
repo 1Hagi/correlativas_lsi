@@ -94,8 +94,10 @@ function load_subjects () {
         subject_30,
 
     ];
-
+    
     for(let i = 0; i < subjects.length; i++) {
         subjects[i].create();
-    };
+        
+    }
+
 }
