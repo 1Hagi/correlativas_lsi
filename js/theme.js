@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Establecer el tema inicial basado en la preferencia del sistema
         html.setAttribute("data-theme", userPrefersDark ? "dark" : "light");
     }
+
+    // Cambiar icono del botón
+    toogleThemeIcon(savedTheme);
 });
 
 // Alternar entre temas al hacer clic en el botón
@@ -25,6 +28,24 @@ function toggleTheme() {
     // Cambiar entre temas y guardar en el local storage
     html.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
+    // Cambiar icono del botón
+    toogleThemeIcon(newTheme);
+}
+
+
+// Función para cambiar los iconos del botón (Sol, Luna)
+function toogleThemeIcon(theme) {
+
+    const iconMoon = document.getElementById("icon-moon");
+    const iconSun = document.getElementById("icon-sun");
+
+    if (theme == "light") {
+        iconMoon.style.display = "block";
+        iconSun.style.display = "none";
+    } else {
+        iconMoon.style.display = "none";
+        iconSun.style.display = "block";
+    }
 }
 
 
