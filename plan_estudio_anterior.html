@@ -27,6 +27,7 @@
     <script defer src="./js/load_subjects_pev.js"></script>
     <script defer src="./js/theme.js"></script>   
     <script defer src="./js/onload.js"></script>
+    <script defer src="https://kit.fontawesome.com/ace10d954d.js" crossorigin="anonymous"></script>
 
     <!-- Estilos CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
@@ -49,17 +50,17 @@
     <!-- Información del creador y colaboradores en desarrollo -->
     <div id="info-content">
 
-        <div style="position: absolute; top: 10px; right: 10px;"><div id="show-info" class="show-info" onclick="showInfo()">☰</div></div>
+        <div style="position: absolute; top: 5px; right: 5px;">
+            <div id="show-info" class="main-btn" onclick="showInfo()">
+                <i class="fa-solid fa-users info-back"></i>
+            </div>
+        </div>
         
 
-        <div class="navbar-spacer" style="display: flex; flex-direction: column; align-items: center; padding: 10px; padding-bottom: 0; border-bottom: var(--linea-entrecortada)">
-            <div style="display: flex; position: relative; border: solid 1px grey; height: 45px; border-radius: 25px; display: flex; align-items: center; justify-content: center; padding: 0 20px; margin-bottom: 10px;">
-
-                <button id="themeButton" class="toggle-btn" onclick="toggleTheme()"></button>
-                <button onclick="toggleTheme()" style="background: none; color: var(--text);">
-                    Tema Oscuro / Claro
-                </button>
-            </div>
+        <div class="info-ops-container">
+            <button onclick="toggleTheme()" class="info-op">
+                Tema Oscuro / Claro
+            </button>
         </div>
 
         <div style="border-bottom: var(--linea-entrecortada); padding: 20px;">
@@ -127,15 +128,14 @@
             <div id='stars3'></div>
         </div>
 
-        <div style="position: absolute; display: flex; flex-wrap: wrap; align-items: center; gap: 5px; top: 10px; left: 10px; width: 100px; z-index: 1;">
-            <div class="show-info" onclick="showInfo()">☰</div>
-            <div class="volver-btn" onclick="volver()">
-                <img src="./img/backarrow2.png" style="width: 100%; opacity: 0.6;"/>
+        <div class="nav-container">
+            <div class="main-btn" onclick="volver()"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="main-btn" onclick="showInfo()"><i class="fa-solid fa-users"></i></div>
+            <div id="themeButton" class="main-btn" onclick="toggleTheme()">
+                <i class="fa-solid fa-moon" id="icon-moon"></i>
+                <i class="fa-solid fa-sun" id="icon-sun"></i>
             </div>
-            <div id="themeButton" class="toggle-btn" onclick="toggleTheme()"></div>
-            <div class="reset-btn" onclick="reset()">
-                <img src="./img/backarrow.png" style="width: 100%; opacity: 0.6;">
-            </div>
+            <div class="main-btn" onclick="reset()"><i class="fa-solid fa-rotate-left"></i></div>
         </div>
         
         <div class="unne_logo"></div>

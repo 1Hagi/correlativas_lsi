@@ -193,10 +193,6 @@ a {
   left: 0;
 }
 
-.info-back {
-    padding: 6px;
-}
-
 .info-ops-container {
     display: flex; 
     flex-direction: column; 
@@ -221,6 +217,7 @@ header {
     display: flex;
     flex-direction: column;
     background-color: var(--header-bg-color);
+    width: 100%;
 }
 
 /* Navegación */
@@ -278,13 +275,18 @@ header {
         0 0 6px rgba(120, 200, 255, 0.15);
 }
 
-.main-btn i {
+.main-btn {
     color: rgba(255, 255, 255, 0.85);
     transition: color 0.2s ease;
 }
 
 .main-btn:hover i {
     color: #7cc8ff;
+}
+
+.info-back {
+    padding: 6px;
+    color: var(--text-color);
 }
 
 /* Efectos de temporada */
@@ -836,6 +838,7 @@ progress::-webkit-progress-value {
     .nav-container {
         position: relative;
         justify-content: center;
+        left: 0;
         gap: 10px; 
         top: 8px; 
         width: 100%; 
@@ -844,7 +847,7 @@ progress::-webkit-progress-value {
     /* Información */
 
     #info-content {
-        left: -100%;
+        left: -101%;
         width: 100%;
     }
 
