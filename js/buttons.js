@@ -6,8 +6,9 @@ function showInfo() {
     const infoContent = document.getElementById("info-content");
     infoContent.classList.toggle('active');
 }
-
+//Se agrego la const clave en la funcion del boton reset para que el reset funcione independiente en cada plan de estudio
 function reset(){
-localStorage.removeItem("estadoMaterias");
-location.reload();
+    const clave = obtenerClavePlan();
+    localStorage.removeItem(clave);
+    location.reload();
 }
