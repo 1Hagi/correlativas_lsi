@@ -530,13 +530,13 @@ main::-webkit-scrollbar-thumb {
     border-radius: 16px;
     border: solid 1px var(--subject-container-border-color);
     box-shadow: var(--subject-container-shadow);
-    font-size: 45px;
+    font-size: 44px;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .plan_estudio:hover {
     transform: scale(1.2);
-    transition: 0.3s, color 0.3s;
     box-shadow: 0 0 20px var(--subject-02-status-stroke-color);
 }
 
