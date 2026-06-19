@@ -1195,6 +1195,15 @@ progress::-webkit-progress-value {
         height: 40px;
         font-size: 12px;
     }
+
+    #stars2, #stars3 {
+        display: none;
+    }
+
+    .btn-style510::before,
+    .btn-style510::after {
+        display: none;
+    }
 }
 
 
